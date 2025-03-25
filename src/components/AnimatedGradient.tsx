@@ -2,7 +2,7 @@
 import React from 'react';
 
 export interface AnimatedGradientProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 const AnimatedGradient: React.FC<AnimatedGradientProps> = ({ children }) => {

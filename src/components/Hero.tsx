@@ -10,7 +10,9 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center pt-20 pb-20 overflow-hidden">
-      <AnimatedGradient />
+      <AnimatedGradient>
+        {/* AnimatedGradient content */}
+      </AnimatedGradient>
       
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">

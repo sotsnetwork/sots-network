@@ -17,7 +17,9 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <AnimatedGradient />
+      <AnimatedGradient>
+        {/* AnimatedGradient content */}
+      </AnimatedGradient>
       
       <div className="text-center relative z-10 px-6 max-w-md mx-auto">
         <h1 className="text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">404</h1>
