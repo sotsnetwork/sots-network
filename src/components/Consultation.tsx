@@ -120,10 +120,17 @@ const Consultation = () => {
                     ></textarea>
                   </div>
                   
-                  <Button className="w-full rounded-lg h-12 shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 group">
-                    <span>Schedule Consultation</span>
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Button>
+                  <a 
+                    href="https://calendly.com/sotsnetwork/30min" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block w-full"
+                  >
+                    <Button className="w-full rounded-lg h-12 shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 group">
+                      <span>Schedule Consultation</span>
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                  </a>
                   
                   <p className="text-xs text-center text-muted-foreground mt-4">
                     By submitting this form, you agree to our 
