@@ -1,10 +1,39 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 const Consultation = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Form validation
+    if (!formData.name || !formData.email) {
+      return;
+    }
+    
+    // Redirect to Calendly after form submission
+    window.open('https://calendly.com/sotsnetwork/30min', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section id="contact" className="py-24 px-6 relative overflow-hidden bg-gradient-to-b from-background to-accent/30">
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb')] bg-cover bg-center opacity-[0.03]"></div>
@@ -79,58 +108,73 @@ const Consultation = () => {
               <div className="glass-card p-8">
                 <h3 className="text-xl font-semibold mb-6">Book Your Free Consultation</h3>
                 
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium mb-1">Full Name</label>
-                    <input
+                    <Input
                       type="text"
                       id="name"
-                      className="w-full px-4 py-2 rounded-lg border border-border bg-background/50 focus:outline-none focus:ring-2 focus:ring-primary/30"
+                      value={formData.name}
+                      onChange={handleChange}
                       placeholder="John Doe"
+                      required
                     />
                   </div>
                   
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium mb-1">Email Address</label>
-                    <input
+                    <Input
                       type="email"
                       id="email"
-                      className="w-full px-4 py-2 rounded-lg border border-border bg-background/50 focus:outline-none focus:ring-2 focus:ring-primary/30"
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder="john@example.com"
+                      required
                     />
                   </div>
                   
                   <div>
                     <label htmlFor="company" className="block text-sm font-medium mb-1">Company</label>
-                    <input
+                    <Input
                       type="text"
                       id="company"
-                      className="w-full px-4 py-2 rounded-lg border border-border bg-background/50 focus:outline-none focus:ring-2 focus:ring-primary/30"
+                      value={formData.company}
+                      onChange={handleChange}
                       placeholder="ACME Inc."
                     />
                   </div>
                   
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium mb-1">What can we help you with?</label>
-                    <textarea
+                    <Textarea
                       id="message"
                       rows={4}
-                      className="w-full px-4 py-2 rounded-lg border border-border bg-background/50 focus:outline-none focus:ring-2 focus:ring-primary/30 resize-none"
+                      value={formData.message}
+                      onChange={handleChange}
                       placeholder="Tell us about your project or challenges..."
-                    ></textarea>
+                      className="resize-none"
+                    />
                   </div>
                   
-                  <a 
-                    href="https://calendly.com/sotsnetwork/30min" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="block w-full"
+                  <Button 
+                    type="submit" 
+                    className="w-full rounded-lg h-12 shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 group"
                   >
-                    <Button className="w-full rounded-lg h-12 shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 group">
-                      <span>Schedule Consultation</span>
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Button>
-                  </a>
+                    <span>Schedule Consultation</span>
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                  
+                  <div className="text-center mt-4">
+                    <p className="text-sm text-muted-foreground">Or schedule directly via</p>
+                    <a 
+                      href="https://calendly.com/sotsnetwork/30min" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-block text-primary hover:underline font-medium text-sm mt-1"
+                    >
+                      Calendly
+                    </a>
+                  </div>
                   
                   <p className="text-xs text-center text-muted-foreground mt-4">
                     By submitting this form, you agree to our 
