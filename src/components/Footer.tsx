@@ -83,15 +83,21 @@ const Footer = () => {
               Stay updated with the latest news, articles, and resources.
             </p>
             
-            <div className="flex">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-grow px-4 py-2 rounded-l-lg border border-border bg-background/50 focus:outline-none focus:ring-2 focus:ring-primary/30"
-              />
-              <Button className="rounded-l-none bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
-                Subscribe
-              </Button>
+            <div className="flex flex-col space-y-4">
+              <iframe 
+                src="https://sotsnetwork.substack.com/embed" 
+                width="100%" 
+                height="320" 
+                style={{ border: "1px solid #EEE", background: "white" }} 
+                frameBorder="0" 
+                scrolling="no"
+                title="SOTS Network Newsletter"
+                className="rounded-lg shadow-sm"
+              ></iframe>
+              
+              <p className="text-xs text-muted-foreground">
+                Subscribe to our Substack for the latest updates and insights.
+              </p>
             </div>
             
             <div className="space-y-3 pt-2">
