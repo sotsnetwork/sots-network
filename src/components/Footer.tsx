@@ -1,8 +1,10 @@
-
 import React from 'react';
-import { Instagram, Youtube, Linkedin, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import { Instagram, Youtube, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+
+// Import the X icon (formerly Twitter)
+import { X } from 'lucide-react';
 
 interface SocialLinkProps {
   icon: React.ReactNode;
@@ -16,6 +18,8 @@ const SocialLink = ({ icon, href, label }: SocialLinkProps) => {
       href={href}
       className="w-8 h-8 rounded-full bg-background flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-accent transition-colors"
       aria-label={label}
+      target="_blank"
+      rel="noopener noreferrer"
     >
       {icon}
     </a>
@@ -44,10 +48,31 @@ const Footer = () => {
             </p>
             
             <div className="flex items-center space-x-3">
-              <SocialLink icon={<Instagram className="h-4 w-4" />} href="#" label="Instagram" />
-              <SocialLink icon={<Youtube className="h-4 w-4" />} href="#" label="YouTube" />
-              <SocialLink icon={<Linkedin className="h-4 w-4" />} href="#" label="LinkedIn" />
-              <SocialLink icon={<Twitter className="h-4 w-4" />} href="#" label="Twitter" />
+              <SocialLink 
+                icon={<Instagram className="h-4 w-4" />} 
+                href="https://www.instagram.com/sotsnetwork" 
+                label="Instagram" 
+              />
+              <SocialLink 
+                icon={<Youtube className="h-4 w-4" />} 
+                href="https://www.youtube.com/@sotsnetwork" 
+                label="YouTube" 
+              />
+              <SocialLink 
+                icon={<Linkedin className="h-4 w-4" />} 
+                href="https://linkedin.com/in/chidera-nwachukwu-32647a216" 
+                label="LinkedIn" 
+              />
+              <SocialLink 
+                icon={<X className="h-4 w-4" />} 
+                href="https://x.com/realpaulchidera/" 
+                label="X" 
+              />
+              <SocialLink 
+                icon={<Instagram className="h-4 w-4" />} 
+                href="https://www.tiktok.com/@sotsnetwork" 
+                label="TikTok" 
+              />
             </div>
           </div>
           
