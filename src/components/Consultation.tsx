@@ -3,10 +3,14 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Calendar, Clock, ArrowRight } from 'lucide-react';
+import { Calendar, Clock, ArrowRight, Check, AlertCircle } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 const Consultation = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,16 +26,77 @@ const Consultation = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Form validation
     if (!formData.name || !formData.email) {
+      toast({
+        title: "Missing information",
+        description: "Please fill in your name and email address.",
+        variant: "destructive"
+      });
       return;
     }
     
-    // Redirect to Calendly after form submission
-    window.open('https://calendly.com/sotsnetwork/30min', '_blank', 'noopener,noreferrer');
+    setIsSubmitting(true);
+    
+    try {
+      // First, save the submission to the database
+      const { error: dbError } = await supabase
+        .from('contact_submissions')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            company: formData.company || null,
+            message: formData.message || null
+          }
+        ]);
+        
+      if (dbError) throw dbError;
+      
+      // Then, send the email notification
+      const response = await fetch('/api/send-consultation-notification', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to send notification');
+      }
+      
+      // Show success toast
+      toast({
+        title: "Consultation Request Submitted",
+        description: "We'll get back to you soon. You can also schedule directly via Calendly.",
+        variant: "default",
+        duration: 5000,
+      });
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        message: ''
+      });
+      
+      // Redirect to Calendly after successful submission
+      window.open('https://calendly.com/sotsnetwork/30min', '_blank', 'noopener,noreferrer');
+    } catch (error) {
+      console.error('Error submitting consultation request:', error);
+      toast({
+        title: "Submission Failed",
+        description: "Please try again or schedule directly via Calendly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -159,9 +224,18 @@ const Consultation = () => {
                   <Button 
                     type="submit" 
                     className="w-full rounded-lg h-12 shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 group"
+                    disabled={isSubmitting}
                   >
-                    <span>Schedule Consultation</span>
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    {isSubmitting ? (
+                      <>
+                        <span>Submitting...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Schedule Consultation</span>
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </>
+                    )}
                   </Button>
                   
                   <div className="text-center mt-4">
