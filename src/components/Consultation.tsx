@@ -57,10 +57,11 @@ const Consultation = () => {
       if (dbError) throw dbError;
       
       // Then, send the email notification
-      const response = await fetch('/api/send-consultation-notification', {
+      const response = await fetch('https://chnrurahkyiuolrsxlgr.supabase.co/functions/v1/send-consultation-notification', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${supabase.auth.getSession()}`
         },
         body: JSON.stringify(formData),
       });
