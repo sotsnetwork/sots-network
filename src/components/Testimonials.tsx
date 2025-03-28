@@ -185,11 +185,19 @@ const Testimonials = () => {
                   Stay updated with our latest projects, insights, and innovations by following us on social media.
                 </p>
                 <div className="flex space-x-4">
-                  <Button variant="outline" className="rounded-full flex items-center space-x-2">
+                  <Button 
+                    variant="outline" 
+                    className="rounded-full flex items-center space-x-2"
+                    onClick={() => window.open('https://www.instagram.com/sotsnetwork', '_blank', 'noopener,noreferrer')}
+                  >
                     <Instagram className="h-4 w-4" />
                     <span>Instagram</span>
                   </Button>
-                  <Button variant="outline" className="rounded-full flex items-center space-x-2">
+                  <Button 
+                    variant="outline" 
+                    className="rounded-full flex items-center space-x-2"
+                    onClick={() => window.open('https://www.youtube.com/@sotsnetwork', '_blank', 'noopener,noreferrer')}
+                  >
                     <Youtube className="h-4 w-4" />
                     <span>YouTube</span>
                   </Button>

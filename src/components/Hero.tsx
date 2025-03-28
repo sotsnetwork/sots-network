@@ -8,6 +8,13 @@ import { ArrowRight } from 'lucide-react';
 const Hero = () => {
   const isMobile = useIsMobile();
 
+  const scrollToConsultation = () => {
+    const consultationSection = document.getElementById('contact');
+    if (consultationSection) {
+      consultationSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center pt-20 pb-20 overflow-hidden">
       <AnimatedGradient>
@@ -39,7 +46,12 @@ const Hero = () => {
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               
-              <Button variant="outline" size="lg" className="rounded-full px-6 border-primary/20 hover:border-primary/40 hover:bg-accent/50">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="rounded-full px-6 border-primary/20 hover:border-primary/40 hover:bg-accent/50"
+                onClick={scrollToConsultation}
+              >
                 <span>Consult with Us</span>
               </Button>
             </div>
