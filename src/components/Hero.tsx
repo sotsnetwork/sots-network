@@ -1,8 +1,9 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
 import AnimatedGradient from './AnimatedGradient';
-import { ArrowRight, Check } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   const isMobile = useIsMobile();
@@ -14,14 +15,14 @@ const Hero = () => {
     }
   };
 
-  // List of automation software platforms
+  // List of automation software platforms with logos
   const automationPlatforms = [
-    "Zapier",
-    "Slack",
-    "HubSpot",
-    "Microsoft Power Automate",
-    "n8n",
-    "Make.com",
+    { name: "Zapier", logo: "/lovable-uploads/zapier-logo.png" },
+    { name: "Slack", logo: "/lovable-uploads/slack-logo.png" },
+    { name: "HubSpot", logo: "/lovable-uploads/hubspot-logo.png" },
+    { name: "Microsoft Power Automate", logo: "/lovable-uploads/power-automate-logo.png" },
+    { name: "n8n", logo: "/lovable-uploads/n8n-logo.png" },
+    { name: "Make.com", logo: "/lovable-uploads/make-logo.png" },
   ];
 
   return (
@@ -83,14 +84,26 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Automation Software Platforms */}
+            {/* Automation Software Platforms Logos */}
             <div className="pt-6 animate-fade-in animate-delay-5">
-              <h3 className="text-sm font-medium text-muted-foreground mb-3">Integrated Automation Platforms:</h3>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+              <h3 className="text-sm font-medium text-muted-foreground mb-4">Integrated Automation Platforms:</h3>
+              <div className="grid grid-cols-3 sm:grid-cols-6 gap-6">
                 {automationPlatforms.map((platform, index) => (
-                  <div key={index} className="flex items-center">
-                    <Check className="h-4 w-4 text-primary mr-2" />
-                    <span className="text-sm">{platform}</span>
+                  <div key={index} className="flex flex-col items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-white/90 shadow-sm flex items-center justify-center p-2 hover:scale-110 transition-transform">
+                      <img 
+                        src={platform.logo} 
+                        alt={`${platform.name} logo`} 
+                        className="w-full h-auto object-contain"
+                        onError={(e) => {
+                          // Fallback to text if image fails to load
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          target.parentElement!.innerHTML = platform.name.substring(0, 2);
+                        }}
+                      />
+                    </div>
+                    <span className="text-xs mt-2 text-muted-foreground">{platform.name}</span>
                   </div>
                 ))}
               </div>
@@ -98,8 +111,8 @@ const Hero = () => {
           </div>
           
           <div className="w-full md:w-1/2 relative">
-            {/* Workflow Diagram Image */}
-            <div className="relative w-full max-w-lg mx-auto animate-fade-in animate-delay-2">
+            {/* Workflow Diagram Image - Enlarged */}
+            <div className="relative w-full mx-auto animate-fade-in animate-delay-2">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl blur-3xl animate-pulse-slow"></div>
               
               <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/20 shadow-lg p-6 animate-float">
