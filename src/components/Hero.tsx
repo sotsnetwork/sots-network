@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -84,7 +83,7 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Added Automation Software Platforms */}
+            {/* Automation Software Platforms */}
             <div className="pt-6 animate-fade-in animate-delay-5">
               <h3 className="text-sm font-medium text-muted-foreground mb-3">Integrated Automation Platforms:</h3>
               <div className="grid grid-cols-2 gap-x-4 gap-y-2">
@@ -99,62 +98,18 @@ const Hero = () => {
           </div>
           
           <div className="w-full md:w-1/2 relative">
-            <div className="relative w-full aspect-square max-w-lg mx-auto md:max-w-none animate-fade-in animate-delay-2">
+            {/* Workflow Diagram Image */}
+            <div className="relative w-full max-w-lg mx-auto animate-fade-in animate-delay-2">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl blur-3xl animate-pulse-slow"></div>
               
-              {/* First Mockup (Larger) */}
-              <div className="relative bg-gradient-to-br from-white to-accent/50 rounded-3xl p-8 backdrop-blur-sm border border-white/20 shadow-xl overflow-hidden animate-float">
-                <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-gradient-to-br from-blue-400/30 to-purple-400/30 rounded-full blur-2xl"></div>
-                <div className="absolute -left-10 -top-10 w-40 h-40 bg-gradient-to-br from-blue-400/30 to-purple-400/30 rounded-full blur-2xl"></div>
-                
-                <div className="space-y-4">
-                  <div className="w-12 h-1.5 bg-blue-600/80 rounded-full"></div>
-                  <div className="w-full h-2 bg-gray-200/80 rounded-full"></div>
-                  <div className="w-2/3 h-2 bg-gray-200/80 rounded-full"></div>
-                  
-                  <div className="pt-4 grid grid-cols-2 gap-4">
-                    <div className="bg-white/80 rounded-xl p-4 shadow-sm">
-                      <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center mb-3">
-                        <div className="w-4 h-4 rounded-full bg-blue-500"></div>
-                      </div>
-                      <div className="w-full h-1.5 bg-gray-200 rounded-full"></div>
-                      <div className="w-2/3 h-1.5 bg-gray-200 rounded-full mt-1.5"></div>
-                    </div>
-                    
-                    <div className="bg-white/80 rounded-xl p-4 shadow-sm">
-                      <div className="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center mb-3">
-                        <div className="w-4 h-4 rounded-full bg-purple-500"></div>
-                      </div>
-                      <div className="w-full h-1.5 bg-gray-200 rounded-full"></div>
-                      <div className="w-2/3 h-1.5 bg-gray-200 rounded-full mt-1.5"></div>
-                    </div>
-                  </div>
-                  
-                  <div className="pt-2">
-                    <div className="w-full h-24 bg-white/80 rounded-xl p-4 shadow-sm">
-                      <div className="flex items-center space-x-2 mb-3">
-                        <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                        <div className="w-1/3 h-1.5 bg-gray-200 rounded-full"></div>
-                      </div>
-                      <div className="space-y-1.5">
-                        <div className="w-full h-1.5 bg-gray-200 rounded-full"></div>
-                        <div className="w-full h-1.5 bg-gray-200 rounded-full"></div>
-                        <div className="w-2/3 h-1.5 bg-gray-200 rounded-full"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Second Image (Workflow Diagram) */}
-              <div className="relative mt-8 bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/20 shadow-lg p-4 animate-fade-in animate-delay-4">
+              <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/20 shadow-lg p-6 animate-float">
                 <img 
                   src="/lovable-uploads/f91990a5-3425-4805-a0df-bf85108957e0.png" 
                   alt="Workflow Automation Diagram" 
                   className="w-full h-auto rounded-2xl"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white/80 to-transparent rounded-3xl pointer-events-none"></div>
-                <div className="absolute bottom-4 left-4 right-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-white/30 to-transparent rounded-3xl pointer-events-none"></div>
+                <div className="absolute bottom-6 left-6">
                   <div className="text-xs font-semibold text-gray-700 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-full inline-block">
                     Automated Workflow Processes
                   </div>
