@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Instagram, Youtube, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -139,8 +138,8 @@ const Footer = () => {
             <div className="space-y-3 pt-2">
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-muted-foreground" />
-                <a href="mailto:info@sotsnetwork.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  info@sotsnetwork.com
+                <a href="mailto:sotsnetwork001@gmail.com" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  sotsnetwork001@gmail.com
                 </a>
               </div>
               

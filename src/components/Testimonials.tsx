@@ -55,19 +55,19 @@ const Testimonials = () => {
     {
       content: "SOTS Network completely transformed our workflow automation. Their AI-driven solutions increased our efficiency by 40% in just two months. I couldn't be happier with the results!",
       author: "Sarah Johnson",
-      position: "CTO, TechInnovate",
+      position: "Content Creator",
       rating: 5,
     },
     {
       content: "The web application SOTS Network designed for us has received incredible feedback from our users. It's intuitive, beautiful, and performs flawlessly across all devices.",
       author: "Michael Chen",
-      position: "Product Manager, NextWave",
+      position: "Product Manager",
       rating: 5,
     },
     {
       content: "Working with SOTS Network on our MVP was a game-changer. They helped us launch in record time while maintaining excellent quality, allowing us to secure our next round of funding.",
-      author: "Jessica Torres",
-      position: "Founder, LaunchPad",
+      author: "Jessica Chisom",
+      position: "Online Vendor and Creator",
       rating: 5,
     },
   ];
@@ -214,7 +214,7 @@ const Testimonials = () => {
                     <span className="text-xs text-muted-foreground">Happy Clients</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-3xl font-bold">10+</span>
+                    <span className="text-3xl font-bold">5+</span>
                     <span className="text-xs text-muted-foreground">Years Experience</span>
                   </div>
                 </div>

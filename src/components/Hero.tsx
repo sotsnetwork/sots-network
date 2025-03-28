@@ -41,7 +41,11 @@ const Hero = () => {
             </p>
             
             <div className="flex items-center space-x-4 pt-4 animate-fade-in animate-delay-3">
-              <Button size="lg" className="rounded-full px-6 shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 group">
+              <Button 
+                size="lg" 
+                className="rounded-full px-6 shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 group"
+                onClick={scrollToConsultation}
+              >
                 <span>Get Started</span>
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
