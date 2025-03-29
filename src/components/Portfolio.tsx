@@ -112,7 +112,11 @@ const Portfolio = () => {
         </div>
         
         <ScrollReveal className="mt-16 text-center">
-          <Button size="lg" className="rounded-full px-6 shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 group">
+          <Button 
+            size="lg" 
+            className="rounded-full px-6 shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 group"
+            onClick={() => window.open('https://www.linkedin.com', '_blank')}
+          >
             <span>View All Projects</span>
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Button>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -14,16 +13,6 @@ const Hero = () => {
       consultationSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
-  // List of automation software platforms with logos
-  const automationPlatforms = [
-    { name: "Zapier", logo: "/lovable-uploads/zapier-logo.png" },
-    { name: "Slack", logo: "/lovable-uploads/slack-logo.png" },
-    { name: "HubSpot", logo: "/lovable-uploads/hubspot-logo.png" },
-    { name: "Microsoft Power Automate", logo: "/lovable-uploads/power-automate-logo.png" },
-    { name: "n8n", logo: "/lovable-uploads/n8n-logo.png" },
-    { name: "Make.com", logo: "/lovable-uploads/make-logo.png" },
-  ];
 
   return (
     <section className="relative min-h-screen flex items-center pt-20 pb-20 overflow-hidden">
@@ -64,9 +53,9 @@ const Hero = () => {
                 variant="outline" 
                 size="lg" 
                 className="rounded-full px-6 border-primary/20 hover:border-primary/40 hover:bg-accent/50"
-                onClick={scrollToConsultation}
+                onClick={() => window.open('https://www.instagram.com', '_blank')}
               >
-                <span>Consult with Us</span>
+                <span>Learn More</span>
               </Button>
             </div>
             
@@ -83,48 +72,23 @@ const Hero = () => {
                 <span className="text-xs text-muted-foreground">Happy Clients</span>
               </div>
             </div>
-
-            {/* Automation Software Platforms Logos */}
-            <div className="pt-6 animate-fade-in animate-delay-5">
-              <h3 className="text-sm font-medium text-muted-foreground mb-4">Integrated Automation Platforms:</h3>
-              <div className="grid grid-cols-3 sm:grid-cols-6 gap-6">
-                {automationPlatforms.map((platform, index) => (
-                  <div key={index} className="flex flex-col items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-white/90 shadow-sm flex items-center justify-center p-2 hover:scale-110 transition-transform">
-                      <img 
-                        src={platform.logo} 
-                        alt={`${platform.name} logo`} 
-                        className="w-full h-auto object-contain"
-                        onError={(e) => {
-                          // Fallback to text if image fails to load
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = 'none';
-                          target.parentElement!.innerHTML = platform.name.substring(0, 2);
-                        }}
-                      />
-                    </div>
-                    <span className="text-xs mt-2 text-muted-foreground">{platform.name}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
           
           <div className="w-full md:w-1/2 relative">
-            {/* Workflow Diagram Image - Enlarged */}
+            {/* Mockup Image */}
             <div className="relative w-full mx-auto animate-fade-in animate-delay-2">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl blur-3xl animate-pulse-slow"></div>
               
               <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/20 shadow-lg p-6 animate-float">
                 <img 
-                  src="/lovable-uploads/f91990a5-3425-4805-a0df-bf85108957e0.png" 
-                  alt="Workflow Automation Diagram" 
+                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=640" 
+                  alt="Application Mockup" 
                   className="w-full h-auto rounded-2xl"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white/30 to-transparent rounded-3xl pointer-events-none"></div>
                 <div className="absolute bottom-6 left-6">
                   <div className="text-xs font-semibold text-gray-700 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-full inline-block">
-                    Automated Workflow Processes
+                    Innovative Solutions
                   </div>
                 </div>
               </div>
