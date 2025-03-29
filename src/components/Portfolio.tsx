@@ -115,7 +115,7 @@ const Portfolio = () => {
           <Button 
             size="lg" 
             className="rounded-full px-6 shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 group"
-            onClick={() => window.open('https://www.linkedin.com', '_blank')}
+            onClick={() => window.open('https://linkedin.com/in/chidera-nwachukwu-32647a216', '_blank')}
           >
             <span>View All Projects</span>
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
