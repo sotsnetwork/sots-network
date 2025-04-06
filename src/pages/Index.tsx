@@ -7,7 +7,6 @@ import Testimonials from '@/components/Testimonials';
 import Portfolio from '@/components/Portfolio';
 import Consultation from '@/components/Consultation';
 import Footer from '@/components/Footer';
-import { ThemeProvider } from '@/components/ThemeProvider';
 
 const Index = () => {
   // Smooth scroll to section when URL has hash
@@ -22,17 +21,15 @@ const Index = () => {
   }, []);
 
   return (
-    <ThemeProvider>
-      <div className="overflow-hidden">
-        <Navbar />
-        <Hero />
-        <Services />
-        <Testimonials />
-        <Portfolio />
-        <Consultation />
-        <Footer />
-      </div>
-    </ThemeProvider>
+    <div className="overflow-hidden">
+      <Navbar />
+      <Hero />
+      <Services />
+      <Testimonials />
+      <Portfolio />
+      <Consultation />
+      <Footer />
+    </div>
   );
 };
 
