@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -15,15 +16,15 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 pb-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-16 pb-16 overflow-hidden">
       <AnimatedGradient>
         {/* AnimatedGradient content */}
       </AnimatedGradient>
       
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-          <div className="w-full md:w-1/2 space-y-6">
-            <div className="inline-flex items-center space-x-2 bg-accent/80 px-3 py-1.5 rounded-full backdrop-blur-md animate-fade-in">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
+          <div className="w-full md:w-1/2 space-y-4 md:space-y-6 mt-14 md:mt-0">
+            <div className="inline-flex items-center space-x-2 bg-accent/80 dark:bg-accent/30 px-3 py-1.5 rounded-full backdrop-blur-md animate-fade-in">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse-slow"></span>
               <span className="text-xs font-medium">Innovative AI-Powered Solutions</span>
             </div>
@@ -39,7 +40,7 @@ const Hero = () => {
               Simple workflows and seamless automation to transform your business processes.
             </p>
             
-            <div className="flex items-center space-x-4 pt-4 animate-fade-in animate-delay-3">
+            <div className="flex items-center space-x-4 pt-2 md:pt-4 animate-fade-in animate-delay-3">
               <Button 
                 size="lg" 
                 className="rounded-full px-6 shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 group"
@@ -59,7 +60,7 @@ const Hero = () => {
               </Button>
             </div>
             
-            <div className="flex items-center space-x-6 pt-8 animate-fade-in animate-delay-4">
+            <div className="flex items-center space-x-6 pt-6 md:pt-8 animate-fade-in animate-delay-4">
               <div className="flex flex-col">
                 <span className="text-3xl font-bold">100+</span>
                 <span className="text-xs text-muted-foreground">Projects Delivered</span>
@@ -74,20 +75,20 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="w-full md:w-1/2 relative">
+          <div className="w-full md:w-1/2 relative mt-6 md:mt-0">
             {/* Mockup Image */}
             <div className="relative w-full mx-auto animate-fade-in animate-delay-2">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl blur-3xl animate-pulse-slow"></div>
               
-              <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/20 shadow-lg p-6 animate-float">
+              <div className="relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/20 dark:border-gray-700/20 shadow-lg p-6 animate-float">
                 <img 
                   src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=640" 
                   alt="Application Mockup" 
                   className="w-full h-auto rounded-2xl"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white/30 to-transparent rounded-3xl pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-white/30 dark:from-gray-900/30 to-transparent rounded-3xl pointer-events-none"></div>
                 <div className="absolute bottom-6 left-6">
-                  <div className="text-xs font-semibold text-gray-700 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-full inline-block">
+                  <div className="text-xs font-semibold text-gray-700 dark:text-gray-300 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm px-3 py-2 rounded-full inline-block">
                     Innovative Solutions
                   </div>
                 </div>

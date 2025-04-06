@@ -2,10 +2,13 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { Moon, Sun } from 'lucide-react';
+import { useTheme } from './ThemeProvider';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,7 +25,7 @@ const Navbar = () => {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-12',
         scrolled
-          ? 'bg-white/70 backdrop-blur-lg shadow-sm'
+          ? 'bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg shadow-sm'
           : 'bg-transparent'
       )}
     >
@@ -58,40 +61,70 @@ const Navbar = () => {
             <Button size="sm" className="rounded-full px-5 shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
               Get Started
             </Button>
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="rounded-full"
+              onClick={toggleTheme}
+            >
+              {theme === 'dark' ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+              <span className="sr-only">Toggle theme</span>
+            </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-md focus:outline-none"
-          >
-            <div className="w-6 flex flex-col items-end space-y-1.5">
-              <span
-                className={cn(
-                  "h-0.5 bg-foreground transition-all duration-300",
-                  mobileMenuOpen ? "w-6 rotate-45 translate-y-2" : "w-6"
-                )}
-              ></span>
-              <span
-                className={cn(
-                  "h-0.5 bg-foreground transition-all duration-300",
-                  mobileMenuOpen ? "opacity-0" : "w-4"
-                )}
-              ></span>
-              <span
-                className={cn(
-                  "h-0.5 bg-foreground transition-all duration-300",
-                  mobileMenuOpen ? "w-6 -rotate-45 -translate-y-2" : "w-6"
-                )}
-              ></span>
-            </div>
-          </button>
+          {/* Mobile Theme Toggle */}
+          <div className="flex items-center space-x-3 md:hidden">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="rounded-full"
+              onClick={toggleTheme}
+            >
+              {theme === 'dark' ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+              <span className="sr-only">Toggle theme</span>
+            </Button>
+            
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 rounded-md focus:outline-none"
+            >
+              <div className="w-6 flex flex-col items-end space-y-1.5">
+                <span
+                  className={cn(
+                    "h-0.5 bg-foreground transition-all duration-300",
+                    mobileMenuOpen ? "w-6 rotate-45 translate-y-2" : "w-6"
+                  )}
+                ></span>
+                <span
+                  className={cn(
+                    "h-0.5 bg-foreground transition-all duration-300",
+                    mobileMenuOpen ? "opacity-0" : "w-4"
+                  )}
+                ></span>
+                <span
+                  className={cn(
+                    "h-0.5 bg-foreground transition-all duration-300",
+                    mobileMenuOpen ? "w-6 -rotate-45 -translate-y-2" : "w-6"
+                  )}
+                ></span>
+              </div>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
         <div
           className={cn(
-            "md:hidden fixed inset-0 bg-white z-40 pt-20 px-6 transition-all duration-300 ease-in-out transform",
+            "md:hidden fixed inset-0 bg-white dark:bg-gray-900 z-40 pt-20 px-6 transition-all duration-300 ease-in-out transform",
             mobileMenuOpen
               ? "translate-x-0 opacity-100"
               : "translate-x-full opacity-0"
