@@ -17,6 +17,15 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Functions to match the behavior of the Hero buttons
+  const scrollToConsultation = () => {
+    const consultationSection = document.getElementById('contact');
+    if (consultationSection) {
+      consultationSection.scrollIntoView({ behavior: 'smooth' });
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
     <header
       className={cn(
@@ -52,10 +61,18 @@ const Navbar = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm" className="rounded-full px-5 border-primary text-primary hover:bg-primary hover:text-white">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="rounded-full px-5 border-primary text-primary hover:bg-primary hover:text-white"
+            >
               Learn More
             </Button>
-            <Button size="sm" className="rounded-full px-5 shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
+            <Button 
+              size="sm" 
+              className="rounded-full px-5 shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
+              onClick={scrollToConsultation}
+            >
               Get Started
             </Button>
           </div>
@@ -132,7 +149,10 @@ const Navbar = () => {
               <Button variant="outline" className="rounded-full px-5 border-primary text-primary hover:bg-primary hover:text-white">
                 Learn More
               </Button>
-              <Button className="rounded-full px-5 shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">
+              <Button 
+                className="rounded-full px-5 shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
+                onClick={scrollToConsultation}
+              >
                 Get Started
               </Button>
             </div>

@@ -16,7 +16,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center pt-16 pb-16 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-16 pb-0 overflow-hidden">
       <AnimatedGradient>
         {/* AnimatedGradient content */}
       </AnimatedGradient>
@@ -54,7 +54,6 @@ const Hero = () => {
                 variant="outline" 
                 size="lg" 
                 className="rounded-full px-6 border-primary/20 hover:border-primary/40 hover:bg-accent/50"
-                onClick={() => window.open('https://www.instagram.com', '_blank')}
               >
                 <span>Learn More</span>
               </Button>

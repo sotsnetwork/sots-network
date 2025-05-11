@@ -72,12 +72,10 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-24 px-6 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-background to-transparent"></div>
-      
+    <section id="services" className="py-0 px-6 relative overflow-hidden">
       <div className="container mx-auto">
         <ScrollReveal>
-          <div className="text-center mb-16 max-w-2xl mx-auto">
+          <div className="text-center mb-16 max-w-2xl mx-auto pt-12">
             <div className="inline-flex items-center space-x-2 bg-accent/80 px-3 py-1.5 rounded-full backdrop-blur-md mb-4">
               <span className="text-xs font-medium">Our Services</span>
             </div>
