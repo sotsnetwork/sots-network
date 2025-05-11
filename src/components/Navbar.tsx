@@ -26,6 +26,15 @@ const Navbar = () => {
     }
   };
 
+  // New function for the Learn More button, matching functionality in Hero
+  const handleLearnMore = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+      setMobileMenuOpen(false);
+    }
+  };
+
   return (
     <header
       className={cn(
@@ -65,6 +74,7 @@ const Navbar = () => {
               variant="outline" 
               size="sm" 
               className="rounded-full px-5 border-primary text-primary hover:bg-primary hover:text-white"
+              onClick={handleLearnMore}
             >
               Learn More
             </Button>
@@ -146,7 +156,11 @@ const Navbar = () => {
               Contact
             </a>
             <div className="flex flex-col space-y-4 pt-4">
-              <Button variant="outline" className="rounded-full px-5 border-primary text-primary hover:bg-primary hover:text-white">
+              <Button 
+                variant="outline" 
+                className="rounded-full px-5 border-primary text-primary hover:bg-primary hover:text-white"
+                onClick={handleLearnMore}
+              >
                 Learn More
               </Button>
               <Button 

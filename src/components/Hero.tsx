@@ -15,6 +15,13 @@ const Hero = () => {
     }
   };
 
+  const handleLearnMore = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center pt-16 pb-0 overflow-hidden">
       <AnimatedGradient>
@@ -54,6 +61,7 @@ const Hero = () => {
                 variant="outline" 
                 size="lg" 
                 className="rounded-full px-6 border-primary/20 hover:border-primary/40 hover:bg-accent/50"
+                onClick={handleLearnMore}
               >
                 <span>Learn More</span>
               </Button>
