@@ -72,10 +72,10 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-0 px-6 relative overflow-hidden">
-      <div className="container mx-auto">
+    <section id="services" className="py-0 relative overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6">
         <ScrollReveal>
-          <div className="text-center mb-16 max-w-2xl mx-auto pt-12">
+          <div className="text-center mb-12 max-w-2xl mx-auto">
             <div className="inline-flex items-center space-x-2 bg-accent/80 px-3 py-1.5 rounded-full backdrop-blur-md mb-4">
               <span className="text-xs font-medium">Our Services</span>
             </div>
@@ -105,7 +105,7 @@ const Services = () => {
           ))}
         </div>
         
-        <ScrollReveal className="mt-16 text-center">
+        <ScrollReveal className="mt-12 text-center">
           <Button size="lg" className="rounded-full px-6 shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 group">
             <span>View All Services</span>
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

@@ -38,7 +38,7 @@ const Navbar = () => {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-12',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 px-4 md:px-8',
         scrolled
           ? 'bg-white/70 backdrop-blur-lg shadow-sm'
           : 'bg-transparent'
@@ -120,7 +120,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <div
           className={cn(
-            "md:hidden fixed inset-0 bg-white z-40 pt-20 px-6 transition-all duration-300 ease-in-out transform",
+            "md:hidden fixed inset-0 bg-white z-40 pt-16 px-6 transition-all duration-300 ease-in-out transform",
             mobileMenuOpen
               ? "translate-x-0 opacity-100"
               : "translate-x-full opacity-0"

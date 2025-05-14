@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -23,14 +24,14 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center pt-16 pb-0 overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       <AnimatedGradient>
         {/* AnimatedGradient content */}
       </AnimatedGradient>
       
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
-          <div className="w-full md:w-1/2 space-y-4 md:space-y-6 mt-14 md:mt-0">
+          <div className="w-full md:w-1/2 space-y-4 md:space-y-6">
             <div className="inline-flex items-center space-x-2 bg-accent/80 dark:bg-accent/30 px-3 py-1.5 rounded-full backdrop-blur-md animate-fade-in">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse-slow"></span>
               <span className="text-xs font-medium">Innovative AI-Powered Solutions</span>
@@ -82,7 +83,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="w-full md:w-1/2 relative mt-6 md:mt-0">
+          <div className="w-full md:w-1/2 relative">
             {/* Mockup Image */}
             <div className="relative w-full mx-auto animate-fade-in animate-delay-2">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-3xl blur-3xl animate-pulse-slow"></div>
