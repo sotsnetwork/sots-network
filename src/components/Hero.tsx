@@ -68,17 +68,29 @@ const Hero = () => {
               </Button>
             </div>
             
-            <div className="flex items-center space-x-6 pt-4 animate-fade-in animate-delay-4">
-              <div className="flex flex-col">
-                <CountUp end={278} className="text-2xl font-bold" />
-                <span className="text-xs text-muted-foreground">Projects Delivered</span>
+            <div className="flex flex-col space-y-4 pt-4 animate-fade-in animate-delay-4">
+              <div className="flex items-center space-x-6">
+                <div className="flex flex-col">
+                  <CountUp end={278} className="text-2xl font-bold" />
+                  <span className="text-xs text-muted-foreground">Projects Delivered</span>
+                </div>
+                
+                <div className="w-px h-8 bg-border"></div>
+                
+                <div className="flex flex-col">
+                  <CountUp end={113} className="text-2xl font-bold" />
+                  <span className="text-xs text-muted-foreground">Happy Clients</span>
+                </div>
               </div>
               
-              <div className="w-px h-8 bg-border"></div>
-              
-              <div className="flex flex-col">
-                <CountUp end={113} className="text-2xl font-bold" />
-                <span className="text-xs text-muted-foreground">Happy Clients</span>
+              {/* Contra Hire Button */}
+              <div className="pt-2">
+                <div 
+                  className="contra-hire-me-button" 
+                  data-analyticsUserId="7c4472bb-5cc9-4283-8261-69263f8cdde0" 
+                  data-theme="dark" 
+                  data-username="sotsnetwork"
+                ></div>
               </div>
             </div>
           </div>
