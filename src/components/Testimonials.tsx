@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight, Star, Instagram, Youtube } from 'lucide-reac
 import { Button } from '@/components/ui/button';
 import ScrollReveal from './ScrollReveal';
 import { cn } from '@/lib/utils';
+import CountUp from './CountUp';
 
 interface TestimonialProps {
   content: string;
@@ -206,15 +207,15 @@ const Testimonials = () => {
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="flex flex-col">
-                    <span className="text-3xl font-bold">100+</span>
+                    <CountUp end={278} className="text-3xl font-bold" />
                     <span className="text-xs text-muted-foreground">Projects Delivered</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-3xl font-bold">50+</span>
+                    <CountUp end={113} className="text-3xl font-bold" />
                     <span className="text-xs text-muted-foreground">Happy Clients</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-3xl font-bold">5+</span>
+                    <CountUp end={5} className="text-3xl font-bold" />
                     <span className="text-xs text-muted-foreground">Years Experience</span>
                   </div>
                 </div>

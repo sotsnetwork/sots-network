@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
 import AnimatedGradient from './AnimatedGradient';
 import { ArrowRight } from 'lucide-react';
+import CountUp from './CountUp';
 
 const Hero = () => {
   const isMobile = useIsMobile();
@@ -23,7 +24,10 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center pt-16 pb-0 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-16 pb-0 overflow-hidden bg-gray-50/80 dark:bg-gray-900/80">
+      {/* Dimmed background overlay */}
+      <div className="absolute inset-0 bg-black/10 z-0"></div>
+      
       <AnimatedGradient>
         {/* AnimatedGradient content */}
       </AnimatedGradient>
@@ -69,14 +73,14 @@ const Hero = () => {
             
             <div className="flex items-center space-x-6 pt-6 md:pt-8 animate-fade-in animate-delay-4">
               <div className="flex flex-col">
-                <span className="text-3xl font-bold">100+</span>
+                <CountUp end={278} className="text-3xl font-bold" />
                 <span className="text-xs text-muted-foreground">Projects Delivered</span>
               </div>
               
               <div className="w-px h-10 bg-border"></div>
               
               <div className="flex flex-col">
-                <span className="text-3xl font-bold">50+</span>
+                <CountUp end={113} className="text-3xl font-bold" />
                 <span className="text-xs text-muted-foreground">Happy Clients</span>
               </div>
             </div>
