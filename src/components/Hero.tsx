@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -24,10 +23,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center pt-16 pb-0 overflow-hidden bg-gray-50/80 dark:bg-gray-900/80">
-      {/* Dimmed background overlay */}
-      <div className="absolute inset-0 bg-black/10 z-0"></div>
-      
+    <section className="relative min-h-screen flex items-center pt-16 pb-0 overflow-hidden">
       <AnimatedGradient>
         {/* AnimatedGradient content */}
       </AnimatedGradient>
