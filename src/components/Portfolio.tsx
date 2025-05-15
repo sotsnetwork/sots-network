@@ -40,9 +40,6 @@ const placeholderImages = [
   "https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=640",
   "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=640",
   "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=640",
-  "https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=640",
-  "https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=640",
-  "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=640",
 ];
 
 const Portfolio = () => {
@@ -61,21 +58,6 @@ const Portfolio = () => {
       title: "E-commerce Mobile App",
       category: "Native App",
       image: placeholderImages[2],
-    },
-    {
-      title: "Smart Home Control System",
-      category: "IoT Solution",
-      image: placeholderImages[3],
-    },
-    {
-      title: "Financial Analytics Platform",
-      category: "FinTech",
-      image: placeholderImages[4],
-    },
-    {
-      title: "Logistics Tracking Dashboard",
-      category: "Web Application",
-      image: placeholderImages[5],
     },
   ];
 
@@ -99,14 +81,14 @@ const Portfolio = () => {
           </div>
         </ScrollReveal>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {portfolioItems.map((item, index) => (
             <PortfolioItem
               key={index}
               title={item.title}
               category={item.category}
               image={item.image}
-              delay={Math.min(index, 5)}
+              delay={Math.min(index, 2)}
             />
           ))}
         </div>
