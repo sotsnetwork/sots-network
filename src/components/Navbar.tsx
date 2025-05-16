@@ -52,7 +52,12 @@ const Navbar = () => {
               alt="SOTS Network Logo" 
               className="h-8 w-auto" 
             />
-            <span className="text-lg font-medium">Network</span>
+            <div className="flex items-center">
+              <span className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+                SOTS
+              </span>
+              <span className="text-lg font-medium">Network</span>
+            </div>
           </a>
 
           {/* Desktop Navigation */}
