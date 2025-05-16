@@ -16,7 +16,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
   threshold = 0.1,
   delay = 0,
   animation = 'fade-in'
-}: ScrollRevealProps) => {
+}) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   
