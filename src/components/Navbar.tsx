@@ -46,10 +46,12 @@ const Navbar = () => {
     >
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
-          <a href="#" className="flex items-center space-x-1">
-            <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
-              SOTS
-            </span>
+          <a href="#" className="flex items-center space-x-2">
+            <img 
+              src="/lovable-uploads/913029d6-168e-4030-ac03-3862815dff36.png" 
+              alt="SOTS Network Logo" 
+              className="h-8 w-auto" 
+            />
             <span className="text-lg font-medium">Network</span>
           </a>
 
