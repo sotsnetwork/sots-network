@@ -62,7 +62,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-16 px-4 relative overflow-hidden">
+    <section id="portfolio" className="py-20 mt-8 px-4 relative overflow-hidden">
       <div className="container mx-auto">
         <ScrollReveal>
           <div className="text-center mb-10 max-w-xl mx-auto">
