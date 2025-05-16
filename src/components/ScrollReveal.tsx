@@ -10,7 +10,7 @@ interface ScrollRevealProps {
   animation?: 'fade-in' | 'slide-up' | 'zoom-in';
 }
 
-const ScrollReveal = ({ 
+const ScrollReveal: React.FC<ScrollRevealProps> = ({ 
   children, 
   className, 
   threshold = 0.1,
