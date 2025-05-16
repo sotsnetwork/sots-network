@@ -50,7 +50,7 @@ const Navbar = () => {
             <img 
               src="/lovable-uploads/913029d6-168e-4030-ac03-3862815dff36.png" 
               alt="SOTS Network Logo" 
-              className="h-8 w-auto" 
+              className="h-12 w-auto" /* Increased from h-8 to h-12 (150% increase) */
             />
             <div className="flex items-center">
               <span className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
