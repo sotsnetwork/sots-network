@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -24,18 +23,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-[95vh] flex items-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-900">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)] animate-pulse-slow"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(139,92,246,0.1),transparent_50%)]"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(236,72,153,0.1),transparent_50%)]"></div>
-      
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-2 h-2 bg-blue-400 rounded-full animate-float opacity-60"></div>
-      <div className="absolute top-40 right-20 w-3 h-3 bg-purple-400 rounded-full animate-float opacity-40" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute bottom-40 left-20 w-1 h-1 bg-pink-400 rounded-full animate-float opacity-80" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute bottom-20 right-10 w-2 h-2 bg-cyan-400 rounded-full animate-float opacity-50" style={{ animationDelay: '0.5s' }}></div>
-      
+    <section className="relative min-h-[95vh] flex items-center overflow-hidden">
       <AnimatedGradient>
         {/* AnimatedGradient content */}
       </AnimatedGradient>
