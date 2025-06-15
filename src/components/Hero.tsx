@@ -187,13 +187,13 @@ const Hero = () => {
                 </div>
               </div>
               
-              {/* Floating Code Elements */}
+              {/* Floating Code Elements - Fixed as display text only */}
               <div className="absolute -top-4 -right-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-sm p-3 rounded-lg border border-cyan-400/30 animate-float">
-                <code className="text-xs text-cyan-300 font-mono">if (task.complete) { optimize() }</code>
+                <code className="text-xs text-cyan-300 font-mono">{'if (task.complete) { optimize() }'}</code>
               </div>
               
               <div className="absolute -bottom-4 -left-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm p-3 rounded-lg border border-purple-400/30 animate-float" style={{ animationDelay: '1s' }}>
-                <code className="text-xs text-purple-300 font-mono">ai.learn() → success</code>
+                <code className="text-xs text-purple-300 font-mono">{'ai.learn() → success'}</code>
               </div>
             </div>
           </div>
