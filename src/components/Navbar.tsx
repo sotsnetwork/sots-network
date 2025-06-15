@@ -18,7 +18,6 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Functions to match the behavior of the Hero buttons
   const scrollToConsultation = () => {
     const consultationSection = document.getElementById('contact');
     if (consultationSection) {
@@ -27,7 +26,6 @@ const Navbar = () => {
     }
   };
 
-  // New function for the Learn More button, matching functionality in Hero
   const handleLearnMore = () => {
     const servicesSection = document.getElementById('services');
     if (servicesSection) {
@@ -41,7 +39,7 @@ const Navbar = () => {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 px-4 md:px-6',
         scrolled
-          ? 'bg-slate-900/90 backdrop-blur-xl shadow-lg border-b border-cyan-400/20'
+          ? 'bg-slate-900/90 backdrop-blur-xl shadow-lg border-b border-slate-700/50'
           : 'bg-transparent'
       )}
     >
@@ -51,31 +49,23 @@ const Navbar = () => {
             <img 
               src="/lovable-uploads/913029d6-168e-4030-ac03-3862815dff36.png" 
               alt="SOTS Network Logo" 
-              className="h-12 w-auto" /* Increased from h-8 to h-12 (150% increase) */
+              className="h-12 w-auto"
             />
             <div className="flex items-center">
               <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                 SOTS
               </span>
-              <span className="text-xl font-medium text-white ml-1">Network</span>
+              <span className="text-xl font-medium text-slate-200 ml-1">Network</span>
             </div>
           </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#services" className="text-sm font-medium text-blue-100 hover:text-cyan-400 transition-colors relative group">
+            <a href="#services" className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors relative group">
               AI Solutions
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 transition-all group-hover:w-full"></span>
             </a>
-            <a href="#testimonials" className="text-sm font-medium text-blue-100 hover:text-cyan-400 transition-colors relative group">
-              Success Stories
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 transition-all group-hover:w-full"></span>
-            </a>
-            <a href="#portfolio" className="text-sm font-medium text-blue-100 hover:text-cyan-400 transition-colors relative group">
-              AI Portfolio
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 transition-all group-hover:w-full"></span>
-            </a>
-            <a href="#contact" className="text-sm font-medium text-blue-100 hover:text-cyan-400 transition-colors relative group">
+            <a href="#contact" className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors relative group">
               Connect
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 transition-all group-hover:w-full"></span>
             </a>
@@ -85,7 +75,7 @@ const Navbar = () => {
             <Button 
               variant="outline" 
               size="sm" 
-              className="rounded-full px-4 py-2 border-2 border-cyan-400/40 bg-cyan-900/20 backdrop-blur-sm text-cyan-100 hover:bg-cyan-800/30 hover:border-cyan-300/60 transition-all group"
+              className="rounded-full px-4 py-2 border-2 border-slate-600/50 bg-slate-800/30 backdrop-blur-sm text-slate-300 hover:bg-slate-700/40 hover:border-slate-500/60 transition-all group"
               onClick={handleLearnMore}
             >
               <Brain className="mr-2 h-4 w-4" />
@@ -143,28 +133,14 @@ const Navbar = () => {
           <nav className="flex flex-col space-y-6 text-center pt-8">
             <a
               href="#services"
-              className="text-lg font-medium py-2 text-blue-100 hover:text-cyan-400 transition-colors"
+              className="text-lg font-medium py-2 text-slate-300 hover:text-cyan-400 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               AI Solutions
             </a>
             <a
-              href="#testimonials"
-              className="text-lg font-medium py-2 text-blue-100 hover:text-cyan-400 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Success Stories
-            </a>
-            <a
-              href="#portfolio"
-              className="text-lg font-medium py-2 text-blue-100 hover:text-cyan-400 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              AI Portfolio
-            </a>
-            <a
               href="#contact"
-              className="text-lg font-medium py-2 text-blue-100 hover:text-cyan-400 transition-colors"
+              className="text-lg font-medium py-2 text-slate-300 hover:text-cyan-400 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Connect
@@ -173,7 +149,7 @@ const Navbar = () => {
               <Button 
                 variant="outline" 
                 size="sm"
-                className="rounded-full border-2 border-cyan-400/40 bg-cyan-900/20 text-cyan-100 hover:bg-cyan-800/30 hover:border-cyan-300/60"
+                className="rounded-full border-2 border-slate-600/50 bg-slate-800/30 text-slate-300 hover:bg-slate-700/40 hover:border-slate-500/60"
                 onClick={handleLearnMore}
               >
                 <Brain className="mr-2 h-4 w-4" />
