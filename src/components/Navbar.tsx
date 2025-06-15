@@ -47,7 +47,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <a href="#" className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/913029d6-168e-4030-ac03-3862815dff36.png" 
+              src="/lovable-uploads/83a24099-2885-4aa2-82c0-9028836b2935.png" 
               alt="SOTS Network Logo" 
               className="h-12 w-auto"
             />
