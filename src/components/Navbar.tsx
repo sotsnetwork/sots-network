@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { Brain, Zap } from 'lucide-react';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -38,59 +39,65 @@ const Navbar = () => {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-2 px-3 md:px-6',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 px-4 md:px-6',
         scrolled
-          ? 'bg-white/70 backdrop-blur-lg shadow-sm'
+          ? 'bg-slate-900/90 backdrop-blur-xl shadow-lg border-b border-cyan-400/20'
           : 'bg-transparent'
       )}
     >
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
-          <a href="#" className="flex items-center space-x-2">
+          <a href="#" className="flex items-center space-x-3">
             <img 
               src="/lovable-uploads/913029d6-168e-4030-ac03-3862815dff36.png" 
               alt="SOTS Network Logo" 
               className="h-12 w-auto" /* Increased from h-8 to h-12 (150% increase) */
             />
             <div className="flex items-center">
-              <span className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+              <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
                 SOTS
               </span>
-              <span className="text-lg font-medium">Network</span>
+              <span className="text-xl font-medium text-white ml-1">Network</span>
             </div>
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            <a href="#services" className="text-xs font-medium hover:text-primary transition-colors">
-              Services
+          <nav className="hidden md:flex items-center space-x-8">
+            <a href="#services" className="text-sm font-medium text-blue-100 hover:text-cyan-400 transition-colors relative group">
+              AI Solutions
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 transition-all group-hover:w-full"></span>
             </a>
-            <a href="#testimonials" className="text-xs font-medium hover:text-primary transition-colors">
-              Testimonials
+            <a href="#testimonials" className="text-sm font-medium text-blue-100 hover:text-cyan-400 transition-colors relative group">
+              Success Stories
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 transition-all group-hover:w-full"></span>
             </a>
-            <a href="#portfolio" className="text-xs font-medium hover:text-primary transition-colors">
-              Portfolio
+            <a href="#portfolio" className="text-sm font-medium text-blue-100 hover:text-cyan-400 transition-colors relative group">
+              AI Portfolio
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 transition-all group-hover:w-full"></span>
             </a>
-            <a href="#contact" className="text-xs font-medium hover:text-primary transition-colors">
-              Contact
+            <a href="#contact" className="text-sm font-medium text-blue-100 hover:text-cyan-400 transition-colors relative group">
+              Connect
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 transition-all group-hover:w-full"></span>
             </a>
           </nav>
 
-          <div className="hidden md:flex items-center space-x-3">
+          <div className="hidden md:flex items-center space-x-4">
             <Button 
               variant="outline" 
               size="sm" 
-              className="rounded-full px-3 py-1 h-auto text-xs border-primary text-primary hover:bg-primary hover:text-white"
+              className="rounded-full px-4 py-2 border-2 border-cyan-400/40 bg-cyan-900/20 backdrop-blur-sm text-cyan-100 hover:bg-cyan-800/30 hover:border-cyan-300/60 transition-all group"
               onClick={handleLearnMore}
             >
-              Learn More
+              <Brain className="mr-2 h-4 w-4" />
+              Explore AI
             </Button>
             <Button 
               size="sm" 
-              className="rounded-full px-3 py-1 h-auto text-xs shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
+              className="rounded-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 shadow-lg hover:shadow-cyan-500/25 transition-all group border-0 text-white font-semibold"
               onClick={scrollToConsultation}
             >
-              Get Started
+              <Zap className="mr-2 h-4 w-4" />
+              Deploy Agent
             </Button>
           </div>
 
@@ -98,25 +105,25 @@ const Navbar = () => {
           <div className="flex md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1 rounded-md focus:outline-none"
+              className="p-2 rounded-md focus:outline-none"
             >
-              <div className="w-5 flex flex-col items-end space-y-1">
+              <div className="w-6 flex flex-col items-end space-y-1">
                 <span
                   className={cn(
-                    "h-0.5 bg-foreground transition-all duration-300",
-                    mobileMenuOpen ? "w-5 rotate-45 translate-y-1.5" : "w-5"
+                    "h-0.5 bg-cyan-400 transition-all duration-300",
+                    mobileMenuOpen ? "w-6 rotate-45 translate-y-1.5" : "w-6"
                   )}
                 ></span>
                 <span
                   className={cn(
-                    "h-0.5 bg-foreground transition-all duration-300",
-                    mobileMenuOpen ? "opacity-0" : "w-3.5"
+                    "h-0.5 bg-cyan-400 transition-all duration-300",
+                    mobileMenuOpen ? "opacity-0" : "w-4"
                   )}
                 ></span>
                 <span
                   className={cn(
-                    "h-0.5 bg-foreground transition-all duration-300",
-                    mobileMenuOpen ? "w-5 -rotate-45 -translate-y-1.5" : "w-5"
+                    "h-0.5 bg-cyan-400 transition-all duration-300",
+                    mobileMenuOpen ? "w-6 -rotate-45 -translate-y-1.5" : "w-6"
                   )}
                 ></span>
               </div>
@@ -127,56 +134,58 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <div
           className={cn(
-            "md:hidden fixed inset-0 bg-white z-40 pt-14 px-4 transition-all duration-300 ease-in-out transform",
+            "md:hidden fixed inset-0 bg-slate-900/95 backdrop-blur-xl z-40 pt-20 px-6 transition-all duration-300 ease-in-out transform",
             mobileMenuOpen
               ? "translate-x-0 opacity-100"
               : "translate-x-full opacity-0"
           )}
         >
-          <nav className="flex flex-col space-y-4 text-center pt-6">
+          <nav className="flex flex-col space-y-6 text-center pt-8">
             <a
               href="#services"
-              className="text-base font-medium py-1"
+              className="text-lg font-medium py-2 text-blue-100 hover:text-cyan-400 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Services
+              AI Solutions
             </a>
             <a
               href="#testimonials"
-              className="text-base font-medium py-1"
+              className="text-lg font-medium py-2 text-blue-100 hover:text-cyan-400 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Testimonials
+              Success Stories
             </a>
             <a
               href="#portfolio"
-              className="text-base font-medium py-1"
+              className="text-lg font-medium py-2 text-blue-100 hover:text-cyan-400 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Portfolio
+              AI Portfolio
             </a>
             <a
               href="#contact"
-              className="text-base font-medium py-1"
+              className="text-lg font-medium py-2 text-blue-100 hover:text-cyan-400 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Contact
+              Connect
             </a>
-            <div className="flex flex-col space-y-3 pt-3">
+            <div className="flex flex-col space-y-4 pt-6">
               <Button 
                 variant="outline" 
                 size="sm"
-                className="rounded-full border-primary text-primary hover:bg-primary hover:text-white"
+                className="rounded-full border-2 border-cyan-400/40 bg-cyan-900/20 text-cyan-100 hover:bg-cyan-800/30 hover:border-cyan-300/60"
                 onClick={handleLearnMore}
               >
-                Learn More
+                <Brain className="mr-2 h-4 w-4" />
+                Explore AI
               </Button>
               <Button 
                 size="sm"
-                className="rounded-full shadow-md hover:shadow-lg transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
+                className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 shadow-lg hover:shadow-cyan-500/25 transition-all border-0 text-white font-semibold"
                 onClick={scrollToConsultation}
               >
-                Get Started
+                <Zap className="mr-2 h-4 w-4" />
+                Deploy Agent
               </Button>
             </div>
           </nav>
