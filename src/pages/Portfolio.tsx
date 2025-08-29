@@ -126,7 +126,7 @@ export default function Portfolio() {
   const navigationSections = ['Home', 'About', 'Projects', 'Contact'];
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-screen">
       <Navigation sections={navigationSections} />
       
       <main>
