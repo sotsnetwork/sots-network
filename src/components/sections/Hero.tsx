@@ -34,7 +34,7 @@ export default function Hero({ name, tagline, subtitle }: HeroProps) {
           <div className="space-y-8">
             <div className="space-y-6">
               <motion.h1 
-                className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight font-['Horizon']"
+                className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight font-['Netflix Sans']"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -45,7 +45,7 @@ export default function Hero({ name, tagline, subtitle }: HeroProps) {
               </motion.h1>
               
               <motion.p 
-                className="text-2xl md:text-3xl lg:text-4xl font-light text-slate-300 leading-relaxed font-['Horizon']"
+                className="text-2xl md:text-3xl lg:text-4xl font-light text-slate-300 leading-relaxed font-['Netflix Sans']"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -55,7 +55,7 @@ export default function Hero({ name, tagline, subtitle }: HeroProps) {
               
               {subtitle && (
                 <motion.p 
-                  className="text-lg md:text-xl lg:text-2xl text-slate-400 leading-relaxed max-w-3xl mx-auto font-['Horizon']"
+                  className="text-lg md:text-xl lg:text-2xl text-slate-400 leading-relaxed max-w-3xl mx-auto font-['Netflix Sans']"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
@@ -75,14 +75,14 @@ export default function Hero({ name, tagline, subtitle }: HeroProps) {
               <a
                 href="#work"
                 aria-label="View my portfolio"
-                className="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white font-['Horizon']"
+                className="px-8 py-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white font-['Netflix Sans']"
               >
                 View My Work
               </a>
               <a
                 href="#contact"
                 aria-label="Get in touch"
-                className="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 backdrop-blur-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white font-['Horizon']"
+                className="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 backdrop-blur-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white font-['Netflix Sans']"
               >
                 Get In Touch
               </a>
