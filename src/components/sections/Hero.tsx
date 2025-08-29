@@ -1,7 +1,4 @@
 import React from 'react';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Environment } from '@react-three/drei';
-import SecurityShield from '../3D/SecurityShield';
 
 interface HeroProps {
   name: string;
@@ -28,39 +25,6 @@ export default function Hero({ name, tagline, subtitle }: HeroProps) {
         
         {/* Video overlay for better text readability */}
         <div className="absolute inset-0 bg-black/40"></div>
-      </div>
-
-      {/* 3D Security Shield - Centered */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="h-96 lg:h-[500px] w-full max-w-2xl">
-          <Canvas
-            camera={{ position: [0, 0, 6], fov: 60 }}
-            className="w-full h-full"
-          >
-            <ambientLight intensity={0.3} />
-            <pointLight position={[10, 10, 10]} intensity={1.5} color="#3b82f6" />
-            <pointLight position={[-10, -10, -10]} intensity={0.8} color="#8b5cf6" />
-            <pointLight position={[0, 10, 0]} intensity={0.6} color="#ffffff" />
-            
-            <SecurityShield 
-              size={2.5}
-              speed={1.0}
-            />
-            
-            <Environment preset="night" />
-            <OrbitControls 
-              enableZoom={false}
-              enablePan={false}
-              autoRotate
-              autoRotateSpeed={0.8}
-              maxPolarAngle={Math.PI / 2}
-              minPolarAngle={Math.PI / 2}
-            />
-          </Canvas>
-          
-          {/* Overlay glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-blue-500/5 pointer-events-none"></div>
-        </div>
       </div>
 
       {/* Text Content - Bottom Left */}
