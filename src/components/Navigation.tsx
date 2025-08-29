@@ -29,7 +29,7 @@ export default function Navigation({ sections }: NavigationProps) {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
-        ? 'bg-white/90 dark:bg-neutral-900/90 backdrop-blur-md shadow-lg' 
+        ? 'bg-slate-950/90 backdrop-blur-md shadow-lg border-b border-slate-800/50' 
         : 'bg-transparent'
     }`}>
       <div className="max-w-6xl mx-auto px-4">
@@ -38,9 +38,9 @@ export default function Navigation({ sections }: NavigationProps) {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl lg:text-3xl font-bold text-primary-600 dark:text-primary-400"
+            className="text-2xl lg:text-3xl font-bold text-white"
           >
-            Portfolio
+            HAQQ
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -52,10 +52,10 @@ export default function Navigation({ sections }: NavigationProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 onClick={() => scrollToSection(section.toLowerCase())}
-                className="text-neutral-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors duration-200 relative group"
+                className="text-slate-300 hover:text-white font-medium transition-colors duration-200 relative group"
               >
                 {section}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent-500 group-hover:w-full transition-all duration-300"></span>
               </motion.button>
             ))}
           </div>
@@ -63,7 +63,7 @@ export default function Navigation({ sections }: NavigationProps) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg text-neutral-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-200"
+            className="lg:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/50 transition-colors duration-200"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isOpen ? (
@@ -83,7 +83,7 @@ export default function Navigation({ sections }: NavigationProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white/95 dark:bg-neutral-900/95 backdrop-blur-md border-t border-neutral-200 dark:border-neutral-700"
+            className="lg:hidden bg-slate-950/95 backdrop-blur-md border-t border-slate-800/50"
           >
             <div className="px-4 py-6 space-y-4">
               {sections.map((section, index) => (
@@ -93,7 +93,7 @@ export default function Navigation({ sections }: NavigationProps) {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => scrollToSection(section.toLowerCase())}
-                  className="block w-full text-left px-4 py-3 text-lg font-medium text-neutral-700 dark:text-neutral-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg transition-all duration-200"
+                  className="block w-full text-left px-4 py-3 text-lg font-medium text-slate-300 hover:text-white hover:bg-slate-800/50 rounded-lg transition-all duration-200"
                 >
                   {section}
                 </motion.button>
