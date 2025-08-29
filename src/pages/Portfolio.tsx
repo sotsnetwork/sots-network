@@ -8,28 +8,28 @@ import Footer from '../components/Footer';
 
 // Sample data - replace with your actual information
 const portfolioData = {
-  name: "John Doe",
-  tagline: "Full-Stack Developer & Creative Technologist",
-  subtitle: "I build digital experiences that matter, combining cutting-edge technology with thoughtful design to create solutions that inspire and engage.",
+  name: "HAQQ",
+  tagline: "Ethical Web3 for All",
+  subtitle: "Blockchain that meets Shariah values. For builders and businesses, with end consumers in mind.",
   
   about: {
-    bio: "I'm a passionate full-stack developer with over 5 years of experience crafting digital solutions. I specialize in modern web technologies, 3D graphics, and creating immersive user experiences. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community. I believe in writing clean, maintainable code and building products that not only work flawlessly but also delight users with their design and functionality.",
+    bio: "I'm a passionate full-stack developer and blockchain enthusiast with over 5 years of experience crafting digital solutions. I specialize in modern web technologies, 3D graphics, and creating immersive user experiences that align with ethical principles. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community. I believe in writing clean, maintainable code and building products that not only work flawlessly but also delight users with their design and functionality.",
     skills: [
-      "React", "TypeScript", "Node.js", "Three.js", "WebGL", "Python", 
-      "AWS", "Docker", "MongoDB", "PostgreSQL", "GraphQL", "Tailwind CSS"
+      "React", "TypeScript", "Node.js", "Three.js", "WebGL", "Solidity", 
+      "Ethereum", "Polygon", "AWS", "Docker", "MongoDB", "PostgreSQL", "GraphQL", "Tailwind CSS"
     ],
-    experience: "5+ years building scalable web applications and interactive 3D experiences for clients ranging from startups to Fortune 500 companies."
+    experience: "5+ years building scalable web applications, interactive 3D experiences, and blockchain solutions for clients ranging from startups to Fortune 500 companies."
   },
   
   projects: [
     {
       id: "1",
-      title: "E-Commerce Platform",
-      description: "A modern, responsive e-commerce platform built with React, Node.js, and MongoDB. Features include real-time inventory, secure payments, and an intuitive admin dashboard.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
-      category: "web",
-      liveUrl: "https://example.com",
-      githubUrl: "https://github.com/example"
+      title: "HAQQ Network Platform",
+      description: "A comprehensive Web3 platform built with React, Solidity, and Three.js. Features include DeFi tools, NFT marketplace, and interactive 3D visualizations.",
+      technologies: ["React", "Solidity", "Three.js", "Ethereum", "Web3.js", "Tailwind CSS"],
+      category: "blockchain",
+      liveUrl: "https://haqq.network",
+      githubUrl: "https://github.com/haqq-network"
     },
     {
       id: "2",
@@ -79,27 +79,27 @@ const portfolioData = {
   ],
   
   contact: {
-    email: "john.doe@example.com",
+    email: "hello@haqq.network",
     socialLinks: [
       {
         name: "GitHub",
-        url: "https://github.com/johndoe",
+        url: "https://github.com/haqq-network",
         icon: "🐙"
       },
       {
         name: "LinkedIn",
-        url: "https://linkedin.com/in/johndoe",
+        url: "https://linkedin.com/company/haqq-network",
         icon: "💼"
       },
       {
         name: "Twitter",
-        url: "https://twitter.com/johndoe",
+        url: "https://twitter.com/haqqnetwork",
         icon: "🐦"
       },
       {
-        name: "Dribbble",
-        url: "https://dribbble.com/johndoe",
-        icon: "🏀"
+        name: "Discord",
+        url: "https://discord.gg/haqq",
+        icon: "🎮"
       }
     ]
   }
@@ -126,7 +126,7 @@ export default function Portfolio() {
   const navigationSections = ['Home', 'About', 'Projects', 'Contact'];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-neutral-900">
+    <div className="min-h-screen bg-slate-950 text-white">
       <Navigation sections={navigationSections} />
       
       <main>
