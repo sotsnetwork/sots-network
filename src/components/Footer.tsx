@@ -211,7 +211,7 @@ const Contact: React.FC = () => (
     </motion.h4>
     
     <motion.div
-      className="space-y-2"
+      className="space-y-2 mb-4"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ ...ANIMATION_CONFIG, delay: ANIMATION_DELAYS.contact + 0.1 }}
@@ -225,6 +225,29 @@ const Contact: React.FC = () => (
       <p className="text-slate-300 font-['Netflix Sans']">
         +234 XXX XXX XXXX
       </p>
+    </motion.div>
+
+    {/* Newsletter Section */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ ...ANIMATION_CONFIG, delay: ANIMATION_DELAYS.contact + 0.2 }}
+    >
+      <h5 className="text-sm font-semibold text-white mb-2 font-['Netflix Sans']">
+        Newsletter
+      </h5>
+      <div className="flex justify-center">
+        <iframe 
+          src="https://sotsnetwork.substack.com/embed" 
+          width="480" 
+          height="150" 
+          style={{border:'1px solid #EEE', background:'white'}} 
+          frameBorder="0" 
+          scrolling="no"
+          className="rounded-lg shadow-lg"
+          title="SOTS Network Newsletter Subscription"
+        />
+      </div>
     </motion.div>
   </div>
 );
