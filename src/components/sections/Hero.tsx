@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 interface HeroProps {
   name: string;
@@ -19,7 +20,7 @@ export default function Hero({ name, tagline, subtitle }: HeroProps) {
           className="w-full h-full object-cover"
           style={{ width: '100vw', height: '100vh' }}
         >
-          <source src="https://cdn.midjourney.com/video/60a3fc34-81e2-4fef-a9a7-55e9b498b4da/0.mp4" type="video/mp4" />
+          <source src="https://cdn.midjourney.com/video/d87c3fa3-6693-4ba9-a5b5-e7df580bf96e/0.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         
@@ -27,41 +28,65 @@ export default function Hero({ name, tagline, subtitle }: HeroProps) {
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
-      {/* Text Content - Bottom Left */}
-      <div className="absolute bottom-20 left-8 lg:left-16 z-10 max-w-2xl">
-        <div className="space-y-6 text-left">
-          <div className="space-y-4">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
-              <span className="bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent">
-                {name}
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl lg:text-3xl font-light text-slate-300 leading-relaxed">
-              {tagline}
-            </p>
-            {subtitle && (
-              <p className="text-base md:text-lg lg:text-xl text-slate-400 leading-relaxed">
-                {subtitle}
-              </p>
-            )}
-          </div>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 pt-8">
-            <a
-              href="#work"
-              aria-label="View my portfolio"
-              className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-blue-400/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+      {/* Centered Hero Content */}
+      <div className="relative z-10 flex items-center justify-center min-h-screen">
+        <div className="text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-8">
+            <div className="space-y-6">
+              <motion.h1 
+                className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <span className="bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent">
+                  {name}
+                </span>
+              </motion.h1>
+              
+              <motion.p 
+                className="text-2xl md:text-3xl lg:text-4xl font-light text-slate-300 leading-relaxed"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                {tagline}
+              </motion.p>
+              
+              {subtitle && (
+                <motion.p 
+                  className="text-lg md:text-xl lg:text-2xl text-slate-400 leading-relaxed max-w-3xl mx-auto"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                >
+                  {subtitle}
+                </motion.p>
+              )}
+            </div>
+            
+            {/* CTA Buttons */}
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-6 justify-center pt-8"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
             >
-              View My Work
-            </a>
-            <a
-              href="#contact"
-              aria-label="Get in touch"
-              className="px-8 py-4 border-2 border-slate-600 text-slate-300 font-semibold rounded-lg hover:border-blue-500 hover:text-blue-400 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
-            >
-              Get In Touch
-            </a>
+              <a
+                href="#work"
+                aria-label="View my portfolio"
+                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-blue-400/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+              >
+                View My Work
+              </a>
+              <a
+                href="#contact"
+                aria-label="Get in touch"
+                className="px-8 py-4 border-2 border-slate-600 text-slate-300 font-semibold rounded-lg hover:border-blue-500 hover:text-blue-400 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+              >
+                Get In Touch
+              </a>
+            </motion.div>
           </div>
         </div>
       </div>
