@@ -9,10 +9,11 @@ interface SocialLink {
 
 interface ContactProps {
   email: string;
+  newsletter: string;
   socialLinks: SocialLink[];
 }
 
-export default function Contact({ email, socialLinks }: ContactProps) {
+export default function Contact({ email, newsletter, socialLinks }: ContactProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,10 +21,18 @@ export default function Contact({ email, socialLinks }: ContactProps) {
     message: ''
   });
 
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
     console.log('Form submitted:', formData);
+  };
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle newsletter subscription here
+    console.log('Newsletter subscription:', newsletterEmail);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -114,9 +123,41 @@ export default function Contact({ email, socialLinks }: ContactProps) {
               </div>
             </div>
 
+            {/* Newsletter Subscription */}
+            <div className="bg-slate-800/30 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-slate-700/50">
+              <h4 className="text-2xl font-bold mb-6 text-purple-400">Stay Updated</h4>
+              <p className="text-slate-300 mb-6">
+                Subscribe to our newsletter for the latest updates on Web3, blockchain, and ethical technology.
+              </p>
+              
+              <form onSubmit={handleNewsletterSubmit} className="space-y-4">
+                <div>
+                  <label htmlFor="newsletter-email" className="block text-slate-300 text-sm font-medium mb-2">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="newsletter-email"
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    required
+                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+                
+                <button
+                  type="submit"
+                  className="w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Subscribe to Newsletter
+                </button>
+              </form>
+            </div>
+
             {/* Social Links */}
             <div className="bg-slate-800/30 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-slate-700/50">
-              <h4 className="text-2xl font-bold mb-6 text-purple-400">Follow Me</h4>
+              <h4 className="text-2xl font-bold mb-6 text-blue-400">Follow Me</h4>
               <div className="grid grid-cols-2 gap-4">
                 {socialLinks.map((link, index) => (
                   <motion.a
