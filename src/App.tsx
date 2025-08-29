@@ -8,6 +8,8 @@ import React from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Portfolio from "./pages/Portfolio";
+import PortfolioSimple from "./pages/PortfolioSimple";
+import Test from "./pages/Test";
 import { ThemeProvider } from "./components/ThemeProvider";
 
 const App = () => {
@@ -24,6 +26,8 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/portfolio-simple" element={<PortfolioSimple />} />
+              <Route path="/test" element={<Test />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
