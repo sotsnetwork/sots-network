@@ -93,15 +93,22 @@ export default function Hero({ name, tagline, subtitle }: HeroProps) {
           </div>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <button className="px-6 py-3 md:px-8 md:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-blue-400/20 text-sm md:text-base">
-              View My Work
-            </button>
-            <button className="px-6 py-3 md:px-8 md:py-4 border-2 border-slate-600 text-slate-300 font-semibold rounded-lg hover:border-blue-500 hover:text-blue-400 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm text-sm md:text-base">
-              Get In Touch
-            </button>
-          </div>
-        </div>
+            <div className="flex flex-col sm:flex-row gap-6 pt-8">
+              <a
+                href="#work"
+                aria-label="View my portfolio"
+                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-blue-400/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+              >
+                View My Work
+              </a>
+              <a
+                href="#contact"
+                aria-label="Get in touch"
+                className="px-8 py-4 border-2 border-slate-600 text-slate-300 font-semibold rounded-lg hover:border-blue-500 hover:text-blue-400 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+              >
+                Get In Touch
+              </a>
+            </div>        </div>
       </div>
 
       {/* Scroll Indicator */}
