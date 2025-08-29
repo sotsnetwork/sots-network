@@ -64,7 +64,7 @@ export default function Footer({ name, socialLinks }: FooterProps) {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <motion.h3 
-              className="text-3xl font-bold mb-4 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent animate-pulse font-['Horizon']"
+              className="text-3xl font-bold mb-4 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent animate-pulse font-['Netflix Sans']"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -72,7 +72,7 @@ export default function Footer({ name, socialLinks }: FooterProps) {
               SOTS NETWORK
             </motion.h3>
             <motion.p 
-              className="text-slate-300 mb-6 leading-relaxed font-['Horizon']"
+              className="text-slate-300 mb-6 leading-relaxed font-['Netflix Sans']"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -88,17 +88,17 @@ export default function Footer({ name, socialLinks }: FooterProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h4 className="text-lg font-semibold text-white mb-3 font-['Horizon']">Stay Updated</h4>
-              <p className="text-slate-300 text-sm mb-3 font-['Horizon']">
+              <h4 className="text-lg font-semibold text-white mb-3 font-['Netflix Sans']">Stay Updated</h4>
+              <p className="text-slate-300 text-sm mb-3 font-['Netflix Sans']">
                 Subscribe to our newsletter for the latest updates
               </p>
               <div className="flex space-x-2">
                 <input
                   type="email"
                   placeholder="your.email@example.com"
-                  className="flex-1 px-4 py-2 bg-slate-800/50 border border-slate-600/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent text-sm font-['Horizon']"
+                  className="flex-1 px-4 py-2 bg-slate-800/50 border border-slate-600/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent text-sm font-['Netflix Sans']"
                 />
-                <button className="px-4 py-2 bg-white text-black font-medium rounded-lg hover:bg-gray-200 transition-all duration-300 text-sm font-['Horizon']">
+                <button className="px-4 py-2 bg-white text-black font-medium rounded-lg hover:bg-gray-200 transition-all duration-300 text-sm font-['Netflix Sans']">
                   Subscribe
                 </button>
               </div>
@@ -108,7 +108,7 @@ export default function Footer({ name, socialLinks }: FooterProps) {
           {/* Quick Links */}
           <div>
             <motion.h4 
-              className="text-lg font-semibold text-white mb-4 font-['Horizon']"
+              className="text-lg font-semibold text-white mb-4 font-['Netflix Sans']"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -122,28 +122,52 @@ export default function Footer({ name, socialLinks }: FooterProps) {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <li>
-                <a href="#about" className="text-slate-300 hover:text-white transition-colors duration-300 font-['Horizon']">
+                <a href="#about" className="text-slate-300 hover:text-white transition-colors duration-300 font-['Netflix Sans']">
                   About
                 </a>
               </li>
               <li>
-                <a href="#projects" className="text-slate-300 hover:text-white transition-colors duration-300 font-['Horizon']">
+                <a href="#projects" className="text-slate-300 hover:text-white transition-colors duration-300 font-['Netflix Sans']">
                   Projects
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-slate-300 hover:text-white transition-colors duration-300 font-['Horizon']">
+                <a href="#contact" className="text-slate-300 hover:text-white transition-colors duration-300 font-['Netflix Sans']">
                   Contact
                 </a>
               </li>
               <li>
-                <a href="https://sotsnetwork.xyz" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors duration-300 font-['Horizon']">
+                <a href="https://sotsnetwork.xyz" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors duration-300 font-['Netflix Sans']">
                   SOTS Network
                 </a>
               </li>
             </motion.ul>
           </div>
         </div>
+
+        {/* Newsletter Section */}
+        <motion.div 
+          className="mb-12 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
+          <h4 className="text-2xl font-bold text-white mb-6 font-['Netflix Sans']">Subscribe to Our Newsletter</h4>
+          <p className="text-slate-300 mb-6 font-['Netflix Sans']">
+            Get the latest updates on Web3, blockchain, and ethical technology directly in your inbox.
+          </p>
+          <div className="flex justify-center">
+            <iframe 
+              src="https://sotsnetwork.substack.com/embed" 
+              width="480" 
+              height="320" 
+              style={{border:'1px solid #EEE', background:'white'}} 
+              frameBorder="0" 
+              scrolling="no"
+              className="rounded-lg shadow-lg"
+            ></iframe>
+          </div>
+        </motion.div>
 
         {/* Bottom Bar */}
         <motion.div 
@@ -152,7 +176,7 @@ export default function Footer({ name, socialLinks }: FooterProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <p className="text-slate-400 text-sm font-['Horizon']">
+          <p className="text-slate-400 text-sm font-['Netflix Sans']">
             © {new Date().getFullYear()} SOTS NETWORK. All rights reserved. 
             Built with ❤️ for the Web3 community.
           </p>
