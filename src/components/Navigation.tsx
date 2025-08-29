@@ -45,9 +45,9 @@ export default function Navigation({ sections }: NavigationProps) {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <h1 className="text-2xl font-bold text-white cursor-pointer" onClick={() => scrollToSection('home')}>
+            <h1 className="text-2xl font-bold text-white cursor-pointer font-['Horizon']" onClick={() => scrollToSection('home')}>
               <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent animate-pulse">
-                HORIZON
+                SOTS NETWORK
               </span>
             </h1>
           </motion.div>
@@ -59,7 +59,7 @@ export default function Navigation({ sections }: NavigationProps) {
                 <motion.button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 relative group"
+                  className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 relative group font-['Horizon']"
                   whileHover={{ y: -2 }}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -117,7 +117,7 @@ export default function Navigation({ sections }: NavigationProps) {
                 <motion.button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className="text-white hover:text-gray-300 block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors duration-300"
+                  className="text-white hover:text-gray-300 block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 font-['Horizon']"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}

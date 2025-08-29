@@ -93,10 +93,10 @@ export default function Contact({ email, newsletter, socialLinks }: ContactProps
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-5xl md:text-6xl font-extrabold mb-8 bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-8 bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent font-['Horizon']">
             Get In Touch
           </h2>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto font-['Horizon']">
             Have a project in mind or just want to say hello? Reach out!
           </p>
         </motion.div>
@@ -109,10 +109,10 @@ export default function Contact({ email, newsletter, socialLinks }: ContactProps
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h3 className="text-3xl font-bold mb-6 text-white">Send a Message</h3>
+            <h3 className="text-3xl font-bold mb-6 text-white font-['Horizon']">Send a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-slate-300 text-sm font-medium mb-2">
+                <label htmlFor="name" className="block text-slate-300 text-sm font-medium mb-2 font-['Horizon']">
                   Name
                 </label>
                 <input
@@ -122,12 +122,12 @@ export default function Contact({ email, newsletter, socialLinks }: ContactProps
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300 font-['Horizon']"
                   placeholder="Your Name"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-slate-300 text-sm font-medium mb-2">
+                <label htmlFor="email" className="block text-slate-300 text-sm font-medium mb-2 font-['Horizon']">
                   Email
                 </label>
                 <input
@@ -137,12 +137,12 @@ export default function Contact({ email, newsletter, socialLinks }: ContactProps
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300 font-['Horizon']"
                   placeholder="your.email@example.com"
                 />
               </div>
               <div>
-                <label htmlFor="subject" className="block text-slate-300 text-sm font-medium mb-2">
+                <label htmlFor="subject" className="block text-slate-300 text-sm font-medium mb-2 font-['Horizon']">
                   Subject
                 </label>
                 <input
@@ -152,12 +152,12 @@ export default function Contact({ email, newsletter, socialLinks }: ContactProps
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300 font-['Horizon']"
                   placeholder="Subject of your message"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-slate-300 text-sm font-medium mb-2">
+                <label htmlFor="message" className="block text-slate-300 text-sm font-medium mb-2 font-['Horizon']">
                   Message
                 </label>
                 <textarea
@@ -167,13 +167,13 @@ export default function Contact({ email, newsletter, socialLinks }: ContactProps
                   onChange={handleChange}
                   rows={5}
                   required
-                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300 font-['Horizon']"
                   placeholder="Your message..."
                 ></textarea>
               </div>
               <motion.button
                 type="submit"
-                className="w-full px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105"
+                className="w-full px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 font-['Horizon']"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -186,7 +186,7 @@ export default function Contact({ email, newsletter, socialLinks }: ContactProps
           <div className="space-y-12">
             {/* Contact Information */}
             <div className="bg-slate-800/30 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-slate-700/50">
-              <h4 className="text-2xl font-bold mb-6 text-white">Contact Info</h4>
+              <h4 className="text-2xl font-bold mb-6 text-white font-['Horizon']">Contact Info</h4>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
@@ -194,7 +194,7 @@ export default function Contact({ email, newsletter, socialLinks }: ContactProps
                       <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884zM18.003 9.882L22 7.884V16a2 2 0 01-2 2H4a2 2 0 01-2-2V7.884l3.997 1.998 4.003 2.002 4.003-2.002z"/>
                     </svg>
                   </div>
-                  <span className="text-slate-300 text-lg">{email}</span>
+                  <span className="text-slate-300 text-lg font-['Horizon']">{email}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
@@ -202,21 +202,21 @@ export default function Contact({ email, newsletter, socialLinks }: ContactProps
                       <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                     </svg>
                   </div>
-                  <span className="text-slate-300 text-lg">Available for Freelance</span>
+                  <span className="text-slate-300 text-lg font-['Horizon']">Available for Freelance</span>
                 </div>
               </div>
             </div>
 
             {/* Newsletter Subscription */}
             <div className="bg-slate-800/30 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-slate-700/50">
-              <h4 className="text-2xl font-bold mb-6 text-white">Stay Updated</h4>
-              <p className="text-slate-300 mb-6">
+              <h4 className="text-2xl font-bold mb-6 text-white font-['Horizon']">Stay Updated</h4>
+              <p className="text-slate-300 mb-6 font-['Horizon']">
                 Subscribe to our newsletter for the latest updates on Web3, blockchain, and ethical technology.
               </p>
               
               <form onSubmit={handleNewsletterSubmit} className="space-y-4">
                 <div>
-                  <label htmlFor="newsletter-email" className="block text-slate-300 text-sm font-medium mb-2">
+                  <label htmlFor="newsletter-email" className="block text-slate-300 text-sm font-medium mb-2 font-['Horizon']">
                     Email Address
                   </label>
                   <input
@@ -225,14 +225,14 @@ export default function Contact({ email, newsletter, socialLinks }: ContactProps
                     value={newsletterEmail}
                     onChange={(e) => setNewsletterEmail(e.target.value)}
                     required
-                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600/50 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300 font-['Horizon']"
                     placeholder="your.email@example.com"
                   />
                 </div>
                 
                 <button
                   type="submit"
-                  className="w-full px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105"
+                  className="w-full px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 font-['Horizon']"
                 >
                   Subscribe to Newsletter
                 </button>

@@ -83,10 +83,10 @@ export default function Projects({ projects }: ProjectsProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-5xl md:text-6xl font-extrabold mb-8 bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-8 bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent font-['Horizon']">
             My Projects
           </h2>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto font-['Horizon']">
             Explore a selection of my work, showcasing diverse skills and creative solutions.
           </p>
         </motion.div>
@@ -102,7 +102,7 @@ export default function Projects({ projects }: ProjectsProps) {
             <motion.button
               key={category}
               onClick={() => filterProjects(category)}
-              className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${
+              className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 font-['Horizon'] ${
                 selectedCategory === category
                   ? 'bg-white text-black shadow-lg'
                   : 'bg-slate-800/50 text-slate-300 hover:bg-slate-700/50 border border-slate-600/50 hover:border-white/50'
@@ -139,18 +139,18 @@ export default function Projects({ projects }: ProjectsProps) {
                 <div className="p-6">
                   {/* Project Badge */}
                   <div className="flex justify-between items-start mb-4">
-                    <span className="px-3 py-1 bg-white text-black text-xs font-bold rounded-full">
+                    <span className="px-3 py-1 bg-white text-black text-xs font-bold rounded-full font-['Horizon']">
                       {project.title.split(' ').map(word => word.charAt(0)).join('')}
                     </span>
                   </div>
 
                   {/* Project Title */}
-                  <h3 className="text-xl font-bold text-white mb-3">
+                  <h3 className="text-xl font-bold text-white mb-3 font-['Horizon']">
                     {project.title}
                   </h3>
 
                   {/* Project Description */}
-                  <p className="text-slate-300 text-sm leading-relaxed mb-4">
+                  <p className="text-slate-300 text-sm leading-relaxed mb-4 font-['Horizon']">
                     {project.description}
                   </p>
 
@@ -159,13 +159,13 @@ export default function Projects({ projects }: ProjectsProps) {
                     {project.technologies.slice(0, 4).map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2 py-1 bg-slate-700/50 text-slate-300 text-xs rounded border border-slate-600/50"
+                        className="px-2 py-1 bg-slate-700/50 text-slate-300 text-xs rounded border border-slate-600/50 font-['Horizon']"
                       >
                         {tech}
                       </span>
                     ))}
                     {project.technologies.length > 4 && (
-                      <span className="px-2 py-1 bg-slate-700/50 text-slate-400 text-xs rounded border border-slate-600/50">
+                      <span className="px-2 py-1 bg-slate-700/50 text-slate-400 text-xs rounded border border-slate-600/50 font-['Horizon']">
                         +{project.technologies.length - 4} more
                       </span>
                     )}
@@ -177,7 +177,7 @@ export default function Projects({ projects }: ProjectsProps) {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 px-4 py-2 bg-white text-black text-sm font-medium rounded-lg hover:bg-gray-200 transition-all duration-300 text-center"
+                      className="flex-1 px-4 py-2 bg-white text-black text-sm font-medium rounded-lg hover:bg-gray-200 transition-all duration-300 text-center font-['Horizon']"
                     >
                       Live Demo
                     </a>
@@ -185,7 +185,7 @@ export default function Projects({ projects }: ProjectsProps) {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 px-4 py-2 border border-slate-600 text-slate-300 text-sm font-medium rounded-lg hover:border-white hover:text-white transition-all duration-300 text-center"
+                      className="flex-1 px-4 py-2 border border-slate-600 text-slate-300 text-sm font-medium rounded-lg hover:border-white hover:text-white transition-all duration-300 text-center font-['Horizon']"
                     >
                       GitHub
                     </a>
