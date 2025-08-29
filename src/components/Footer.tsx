@@ -145,30 +145,6 @@ export default function Footer({ name, socialLinks }: FooterProps) {
           </div>
         </div>
 
-        {/* Newsletter Section */}
-        <motion.div 
-          className="mb-12 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-        >
-          <h4 className="text-2xl font-bold text-white mb-6 font-['Netflix Sans']">Subscribe to Our Newsletter</h4>
-          <p className="text-slate-300 mb-6 font-['Netflix Sans']">
-            Get the latest updates on Web3, blockchain, and ethical technology directly in your inbox.
-          </p>
-          <div className="flex justify-center">
-            <iframe 
-              src="https://sotsnetwork.substack.com/embed" 
-              width="480" 
-              height="320" 
-              style={{border:'1px solid #EEE', background:'white'}} 
-              frameBorder="0" 
-              scrolling="no"
-              className="rounded-lg shadow-lg"
-            ></iframe>
-          </div>
-        </motion.div>
-
         {/* Bottom Bar */}
         <motion.div 
           className="pt-8 border-t border-white/30 text-center"
