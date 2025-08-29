@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 interface SocialLink {
   name: string;
   url: string;
-  icon: string;
+  icon: React.ReactNode;
 }
 
 interface ContactProps {
@@ -97,7 +97,9 @@ export default function Contact({ email, socialLinks }: ContactProps) {
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                    <span className="text-white text-xl">📧</span>
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
                   </div>
                   <div>
                     <p className="text-slate-400 text-sm">Email</p>
@@ -127,7 +129,9 @@ export default function Contact({ email, socialLinks }: ContactProps) {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                   >
-                    <span className="text-2xl">{link.icon}</span>
+                    <div className="w-6 h-6 text-slate-200">
+                      {link.icon}
+                    </div>
                     <span className="text-slate-200 font-medium">{link.name}</span>
                   </motion.a>
                 ))}
