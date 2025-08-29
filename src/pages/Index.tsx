@@ -1,37 +1,39 @@
 
 import React, { useEffect } from 'react';
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import Services from '@/components/Services';
-import Consultation from '@/components/Consultation';
-import Footer from '@/components/Footer';
+import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
-  // Smooth scroll to section when URL has hash
+  const navigate = useNavigate();
+
   useEffect(() => {
-    if (window.location.hash) {
-      const id = window.location.hash.substring(1);
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }, []);
+    // Redirect to portfolio after a short delay
+    const timer = setTimeout(() => {
+      navigate('/portfolio');
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [navigate]);
 
   return (
-    <div className="min-h-screen bg-slate-900 overflow-hidden">
-      {/* Subtle gradient overlay */}
-      <div className="fixed inset-0 bg-gradient-to-br from-slate-800/30 via-slate-900 to-slate-950 pointer-events-none"></div>
-      
-      {/* Grid pattern overlay for texture */}
-      <div className="fixed inset-0 opacity-[0.02] bg-[linear-gradient(rgba(148,163,184,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.3)_1px,transparent_1px)] bg-[size:50px_50px] pointer-events-none"></div>
-      
-      <div className="relative z-10">
-        <Navbar />
-        <Hero />
-        <Services />
-        <Consultation />
-        <Footer />
+    <div className="min-h-screen bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 flex items-center justify-center">
+      <div className="text-center text-white">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 bg-clip-text text-transparent">
+          Welcome to My Portfolio
+        </h1>
+        <p className="text-xl text-neutral-300 mb-8">
+          Redirecting you to my 3D portfolio website...
+        </p>
+        <div className="flex justify-center">
+          <div className="w-16 h-16 border-4 border-primary-500 border-t-transparent rounded-full animate-spin"></div>
+        </div>
+        <p className="text-sm text-neutral-400 mt-6">
+          Or <button 
+            onClick={() => navigate('/portfolio')} 
+            className="text-primary-400 hover:text-primary-300 underline"
+          >
+            click here
+          </button> to continue immediately
+        </p>
       </div>
     </div>
   );
