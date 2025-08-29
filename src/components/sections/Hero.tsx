@@ -11,33 +11,23 @@ interface HeroProps {
 
 export default function Hero({ name, tagline, subtitle }: HeroProps) {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-black">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        {/* Subtle grid pattern */}
-        <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(rgba(148,163,184,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.3)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+    <section className="relative min-h-screen overflow-hidden">
+      {/* Video Background */}
+      <div className="absolute inset-0 w-full h-full">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+          style={{ width: '100vw', height: '100vh' }}
+        >
+          <source src="https://cdn.midjourney.com/video/60a3fc34-81e2-4fef-a9a7-55e9b498b4da/0.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         
-        {/* Floating geometric elements */}
-        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
-        
-        {/* Curved lines for futuristic feel */}
-        <div className="absolute top-0 left-0 w-full h-full">
-          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <path 
-              d="M0,20 Q25,10 50,20 T100,20" 
-              stroke="rgba(148,163,184,0.1)" 
-              strokeWidth="0.5" 
-              fill="none"
-            />
-            <path 
-              d="M0,80 Q25,70 50,80 T100,80" 
-              stroke="rgba(148,163,184,0.1)" 
-              strokeWidth="0.5" 
-              fill="none"
-            />
-          </svg>
-        </div>
+        {/* Video overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
       {/* 3D Security Shield - Centered */}
@@ -93,22 +83,23 @@ export default function Hero({ name, tagline, subtitle }: HeroProps) {
           </div>
           
           {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 pt-8">
-              <a
-                href="#work"
-                aria-label="View my portfolio"
-                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-blue-400/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
-              >
-                View My Work
-              </a>
-              <a
-                href="#contact"
-                aria-label="Get in touch"
-                className="px-8 py-4 border-2 border-slate-600 text-slate-300 font-semibold rounded-lg hover:border-blue-500 hover:text-blue-400 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
-              >
-                Get In Touch
-              </a>
-            </div>        </div>
+          <div className="flex flex-col sm:flex-row gap-6 pt-8">
+            <a
+              href="#work"
+              aria-label="View my portfolio"
+              className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-blue-400/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+            >
+              View My Work
+            </a>
+            <a
+              href="#contact"
+              aria-label="Get in touch"
+              className="px-8 py-4 border-2 border-slate-600 text-slate-300 font-semibold rounded-lg hover:border-blue-500 hover:text-blue-400 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+            >
+              Get In Touch
+            </a>
+          </div>
+        </div>
       </div>
 
       {/* Scroll Indicator */}
