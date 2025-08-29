@@ -30,8 +30,8 @@ export default function Navigation({ sections }: NavigationProps) {
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-slate-900/90 backdrop-blur-md border-b border-slate-700/50' 
-          : 'bg-transparent'
+          ? 'bg-black/95 backdrop-blur-md border-b border-white/30' 
+          : 'bg-black'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -46,7 +46,9 @@ export default function Navigation({ sections }: NavigationProps) {
             whileTap={{ scale: 0.95 }}
           >
             <h1 className="text-2xl font-bold text-white cursor-pointer" onClick={() => scrollToSection('home')}>
-              SOTS NETWORK
+              <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent animate-pulse">
+                HORIZON
+              </span>
             </h1>
           </motion.div>
 
@@ -57,14 +59,14 @@ export default function Navigation({ sections }: NavigationProps) {
                 <motion.button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 relative group"
+                  className="text-white hover:text-gray-300 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 relative group"
                   whileHover={{ y: -2 }}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   {section}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
                 </motion.button>
               ))}
             </div>
@@ -74,7 +76,7 @@ export default function Navigation({ sections }: NavigationProps) {
           <div className="md:hidden">
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-300 hover:text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="text-white hover:text-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               whileTap={{ scale: 0.95 }}
             >
               <svg
@@ -104,7 +106,7 @@ export default function Navigation({ sections }: NavigationProps) {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="md:hidden bg-slate-900/95 backdrop-blur-md border-t border-slate-700/50"
+            className="md:hidden bg-black/95 backdrop-blur-md border-t border-white/30"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -115,7 +117,7 @@ export default function Navigation({ sections }: NavigationProps) {
                 <motion.button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className="text-slate-300 hover:text-white block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors duration-300"
+                  className="text-white hover:text-gray-300 block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors duration-300"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
