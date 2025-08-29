@@ -62,10 +62,10 @@ export default function About({ name, bio, skills, experience }: AboutProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-5xl md:text-6xl font-extrabold mb-8 bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent font-['Horizon']">
+          <h2 className="text-5xl md:text-6xl font-extrabold mb-8 bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent font-['Netflix Sans']">
             About {name}
           </h2>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto font-['Horizon']">
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto font-['Netflix Sans']">
             Get to know me better and discover what drives my passion for technology
           </p>
         </motion.div>
@@ -79,15 +79,15 @@ export default function About({ name, bio, skills, experience }: AboutProps) {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="bg-slate-800/30 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-slate-700/50">
-              <h3 className="text-3xl font-bold mb-6 text-white font-['Horizon']">My Story</h3>
-              <p className="text-slate-300 leading-relaxed text-lg font-['Horizon']">
+              <h3 className="text-3xl font-bold mb-6 text-white font-['Netflix Sans']">My Story</h3>
+              <p className="text-slate-300 leading-relaxed text-lg font-['Netflix Sans']">
                 {bio}
               </p>
             </div>
             
             <div className="bg-slate-800/30 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-slate-700/50">
-              <h3 className="text-3xl font-bold mb-6 text-white font-['Horizon']">Experience</h3>
-              <p className="text-slate-300 leading-relaxed text-lg font-['Horizon']">
+              <h3 className="text-3xl font-bold mb-6 text-white font-['Netflix Sans']">Experience</h3>
+              <p className="text-slate-300 leading-relaxed text-lg font-['Netflix Sans']">
                 {experience}
               </p>
             </div>
@@ -101,7 +101,7 @@ export default function About({ name, bio, skills, experience }: AboutProps) {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="bg-slate-800/30 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-slate-700/50">
-              <h3 className="text-3xl font-bold mb-6 text-white font-['Horizon']">Skills & Technologies</h3>
+              <h3 className="text-3xl font-bold mb-6 text-white font-['Netflix Sans']">Skills & Technologies</h3>
               <div className="grid grid-cols-2 gap-3">
                 {skills.map((skill, index) => (
                   <motion.div
@@ -113,7 +113,7 @@ export default function About({ name, bio, skills, experience }: AboutProps) {
                     whileHover={{ scale: 1.02 }}
                   >
                     <div className="w-2 h-2 bg-white rounded-full"></div>
-                    <span className="text-slate-200 font-medium font-['Horizon']">{skill}</span>
+                    <span className="text-slate-200 font-medium font-['Netflix Sans']">{skill}</span>
                   </motion.div>
                 ))}
               </div>
