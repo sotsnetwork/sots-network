@@ -44,7 +44,7 @@ export default function Footer({ name, socialLinks }: FooterProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              Ethical Web3 for All. Building blockchain solutions that meet Shariah values, 
+              Web Solutions to Creators & Businesses. Building blockchain solutions that meet Shariah values, 
               designed for builders and businesses with end consumers in mind.
             </motion.p>
             
@@ -104,8 +104,8 @@ export default function Footer({ name, socialLinks }: FooterProps) {
                 </a>
               </li>
               <li>
-                <a href="https://haqq.network" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-400 transition-colors duration-300">
-                  HAQQ Network
+                <a href="https://sotsnetwork.xyz" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-400 transition-colors duration-300">
+                  SOTS Network
                 </a>
               </li>
             </motion.ul>
