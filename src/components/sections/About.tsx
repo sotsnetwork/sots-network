@@ -1,114 +1,109 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 interface AboutProps {
   name: string;
   bio: string;
-  avatarUrl?: string;
-  skills?: string[];
-  experience?: string;
+  skills: string[];
+  experience: string;
 }
 
-export default function About({ name, bio, avatarUrl, skills, experience }: AboutProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
+export default function About({ name, bio, skills, experience }: AboutProps) {
+  const [showFullBio, setShowFullBio] = useState(false);
+
+  const displayedBio = showFullBio ? bio : `${bio.substring(0, 200)}...`;
 
   return (
-    <section id="about" className="py-20 bg-neutral-50 dark:bg-neutral-900">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-4">
-            About <span className="text-primary-600 dark:text-primary-400">Me</span>
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto rounded-full"></div>
+    <section id="about" className="relative min-h-screen flex flex-col items-center justify-center py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-950 via-slate-900 to-black text-white overflow-hidden">
+      {/* Background Elements - Same as Hero for consistency */}
+      <div className="absolute inset-0">
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(rgba(148,163,184,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.3)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+        
+        {/* Floating geometric elements */}
+        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+        
+        {/* Curved lines for futuristic feel */}
+        <div className="absolute top-0 left-0 w-full h-full">
+          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path 
+              d="M0,30 Q25,20 50,30 T100,30" 
+              stroke="rgba(148,163,184,0.1)" 
+              strokeWidth="0.5" 
+              fill="none"
+            />
+            <path 
+              d="M0,70 Q25,80 50,70 T100,70" 
+              stroke="rgba(148,163,184,0.1)" 
+              strokeWidth="0.5" 
+              fill="none"
+            />
+          </svg>
         </div>
+      </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Avatar/Photo */}
-          <div className="relative group">
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-              {avatarUrl ? (
-                <img
-                  src={avatarUrl}
-                  alt={`${name} portrait`}
-                  className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
-                />
-              ) : (
-                <div className="w-full h-96 bg-gradient-to-br from-primary-400 to-secondary-500 flex items-center justify-center">
-                  <div className="text-white text-6xl font-bold">
-                    {name.split(' ').map(n => n[0]).join('')}
-                  </div>
-                </div>
-              )}
-              
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="relative z-10 max-w-6xl mx-auto text-center">
+        <motion.h2
+          className="text-5xl md:text-6xl font-extrabold mb-16 bg-gradient-to-r from-white via-slate-100 to-slate-300 bg-clip-text text-transparent"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          About Me
+        </motion.h2>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 text-left">
+          {/* Bio Section */}
+          <motion.div
+            className="bg-slate-800/30 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-slate-700/50"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <h3 className="text-3xl font-bold mb-6 text-blue-400">Who I Am</h3>
+            <p className="text-lg text-slate-300 leading-relaxed mb-4">
+              {displayedBio}
+            </p>
+            {bio.length > 200 && (
+              <button
+                onClick={() => setShowFullBio(!showFullBio)}
+                className="text-blue-400 hover:text-blue-300 transition-colors duration-300 text-lg font-medium"
+              >
+                {showFullBio ? 'Read Less' : 'Read More'}
+              </button>
+            )}
+          </motion.div>
+
+          {/* Skills Section */}
+          <motion.div
+            className="bg-slate-800/30 backdrop-blur-sm p-8 rounded-xl shadow-lg border border-slate-700/50"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <h3 className="text-3xl font-bold mb-6 text-purple-400">Skills & Technologies</h3>
+            <div className="flex flex-wrap gap-3">
+              {skills.map((skill, index) => (
+                <motion.span
+                  key={index}
+                  className="bg-slate-700/50 text-slate-200 px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-600/50 transition-colors duration-300 border border-slate-600/50"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.6 + index * 0.05 }}
+                >
+                  {skill}
+                </motion.span>
+              ))}
             </div>
             
-            {/* Floating Elements */}
-            <div className="absolute -top-4 -right-4 w-8 h-8 bg-accent-500 rounded-full animate-pulse"></div>
-            <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-primary-500 rounded-full animate-pulse delay-1000"></div>
-          </div>
-
-          {/* Content */}
-          <div className="space-y-6">
-            <div className="space-y-4">
-              <h3 className="text-2xl md:text-3xl font-bold text-neutral-900 dark:text-white">
-                Hi, I'm {name} 👋
-              </h3>
-              
-              <div className="space-y-4">
-                <p className="text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed">
-                  {isExpanded ? bio : `${bio.substring(0, 200)}...`}
-                </p>
-                
-                {bio.length > 200 && (
-                  <button
-                    onClick={() => setIsExpanded(!isExpanded)}
-                    className="text-primary-600 dark:text-primary-400 font-medium hover:underline focus:outline-none"
-                  >
-                    {isExpanded ? 'Read less' : 'Read more'}
-                  </button>
-                )}
-              </div>
+            <div className="mt-8">
+              <h4 className="text-2xl font-bold mb-4 text-blue-400">Experience</h4>
+              <p className="text-slate-300 leading-relaxed">
+                {experience}
+              </p>
             </div>
-
-            {/* Experience */}
-            {experience && (
-              <div className="bg-white dark:bg-neutral-800 p-6 rounded-xl shadow-lg border border-neutral-200 dark:border-neutral-700">
-                <h4 className="text-lg font-semibold text-neutral-900 dark:text-white mb-3">
-                  Experience
-                </h4>
-                <p className="text-neutral-700 dark:text-neutral-300">
-                  {experience}
-                </p>
-              </div>
-            )}
-
-            {/* Skills */}
-            {skills && skills.length > 0 && (
-              <div className="space-y-4">
-                <h4 className="text-lg font-semibold text-neutral-900 dark:text-white">
-                  Skills & Technologies
-                </h4>
-                <div className="flex flex-wrap gap-3">
-                  {skills.map((skill, index) => (
-                    <span
-                      key={index}
-                      className="px-4 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 rounded-full text-sm font-medium border border-primary-200 dark:border-primary-700 hover:bg-primary-200 dark:hover:bg-primary-800/50 transition-colors duration-200"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* CTA */}
-            <div className="pt-4">
-              <button className="px-8 py-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Download Resume
-              </button>
-            </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
